@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
+import java.net.URL;
+
 
 public class HelloController {
 
@@ -21,30 +23,31 @@ public class HelloController {
     @FXML
     private Button registerButton;
 
-    @FXML
-    private Button backButton;
-
-    public void doctorButtonOnAction(ActionEvent event) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+    public void loginButtonOnAction(ActionEvent event) throws Exception {
+        /*Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
 
         Stage window = (Stage) loginButton.getScene().getWindow();
-        window.setScene(new Scene(root,1200,800));
+        window.setScene(new Scene(root,1200,800));*/
+
+        URL adr = HelloApplication.class.getResource("login.fxml");
+
+        try {
+            Parent root = FXMLLoader.load(adr);
+            Stage window = (Stage) loginButton.getScene().getWindow();
+            window.setScene(new Scene(root, 1200, 800));
+        } catch (Exception e) {
+            System.out.println(adr);
+        }
     }
 
+    public void registerButtonOnAction(ActionEvent event) throws Exception {
 
-    public void patientButtonOnAction(ActionEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
+        URL adr2 = HelloApplication.class.getResource("register.fxml");
 
+
+        Parent root = FXMLLoader.load(adr2);
         Stage window = (Stage) registerButton.getScene().getWindow();
-        window.setScene(new Scene(root,1200,800));
-
-    }
-
-    public void backButton(ActionEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
-
-        Stage window = (Stage) backButton.getScene().getWindow();
-        window.setScene(new Scene(root,1200,800));
+        window.setScene(new Scene(root, 1200, 800));
 
     }
 }
