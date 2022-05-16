@@ -10,8 +10,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -21,7 +23,7 @@ public class LoginController{
     private Button cancelButton;
 
     @FXML
-    private Label errorLabel;
+    private Text loginMessage;
 
     @FXML
     private Button loginButton;
@@ -32,7 +34,7 @@ public class LoginController{
     @FXML
     private PasswordField passwordField;
 
-
+    /*
     public void loginButtonOnAction(ActionEvent event){
 
         if(!usernameField.getText().isBlank() && !passwordField.getText().isBlank()){
@@ -40,6 +42,31 @@ public class LoginController{
         } else {
             errorLabel.setText("Please enter username and password.");
         }
+
+
+
+    }*/
+
+    @FXML
+    public void handleLoginAction() {
+
+           if(UserService.checkUserCredentials(usernameField.getText(), passwordField.getText())) {
+               URL adrr = HelloApplication.class.getResource("afterLoginPage.fxml");
+
+
+               Parent root = null;
+               try {
+                   root = FXMLLoader.load(adrr);
+                   Stage window = (Stage) cancelButton.getScene().getWindow();
+                   window.setScene(new Scene(root, 1200, 800));
+               } catch (IOException e) {
+                   e.printStackTrace();
+               }
+
+
+           }else{
+               loginMessage.setText("Cannot login");
+           }
 
 
 

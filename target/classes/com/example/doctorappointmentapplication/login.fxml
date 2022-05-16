@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.doctorappointmentapplication.LoginController">
    <left>
@@ -47,7 +48,7 @@
             </Label>
             <TextField fx:id="usernameField" layoutX="241.0" layoutY="337.0" prefHeight="32.0" prefWidth="323.0" />
             <PasswordField fx:id="passwordField" layoutX="241.0" layoutY="411.0" prefHeight="32.0" prefWidth="323.0" />
-            <Button fx:id="loginButton" layoutX="256.0" layoutY="579.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="48.0" prefWidth="130.0" text="Login">
+            <Button fx:id="loginButton" layoutX="256.0" layoutY="579.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="48.0" prefWidth="130.0" text="Login">
                <font>
                   <Font size="24.0" />
                </font>
@@ -57,11 +58,7 @@
                   <Font size="24.0" />
                </font>
             </Button>
-            <Label fx:id="errorLabel" layoutX="143.0" layoutY="496.0" prefHeight="44.0" prefWidth="357.0" textAlignment="CENTER" textFill="#f20909">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
+            <Text fx:id="loginMessage" layoutX="151.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="350.21630859375" />
          </children>
       </AnchorPane>
    </right>

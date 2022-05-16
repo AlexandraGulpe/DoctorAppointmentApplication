@@ -17,6 +17,7 @@ public class UserService {
     private static ObjectRepository<User> userRepository;
 
     public static void initDatabase() {
+        System.out.println(getPathToFile("registration-example.db").toFile());
         Nitrite database = Nitrite.builder()
                 .filePath(getPathToFile("registration-example.db").toFile())
                 .openOrCreate("test", "test");
@@ -27,6 +28,18 @@ public class UserService {
     public static void addUser(String username, String password, String role, String fullName, String speciality) throws UsernameAlreadyExistsException {
         checkUserDoesNotAlreadyExist(username);
         userRepository.insert(new User(username, encodePassword(username, password), role, fullName, speciality));
+    }
+
+    public static boolean checkUserCredentials(String username, String password){
+        for (User user : userRepository.find()) {
+            if (Objects.equals(username, user.getUsername())){
+                if(user.getPassword().equals(encodePassword(username,password)))
+                    return true;
+
+            }
+
+        }
+        return false;
     }
 
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
