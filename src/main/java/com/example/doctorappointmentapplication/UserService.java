@@ -42,12 +42,23 @@ public class UserService {
         return false;
     }
 
+
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
         for (User user : userRepository.find()) {
             if (Objects.equals(username, user.getUsername()))
                 throw new UsernameAlreadyExistsException(username);
         }
     }
+
+    public static String checkRole(String username){
+        for(User user : userRepository.find()){
+            if (Objects.equals(username, user.getUsername())){
+                return user.getRole();
+            }
+        }
+        return "";
+    }
+
 
     private static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();

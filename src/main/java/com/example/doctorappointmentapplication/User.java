@@ -65,9 +65,7 @@ public class User {
         return result;
     }
 
-    public String getSpeciality() {
-        return speciality;
-    }
+    public String getSpeciality() {return speciality;}
 
     public void setSpeciality(String speciality)
     {
