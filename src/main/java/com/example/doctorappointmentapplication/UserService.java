@@ -59,6 +59,17 @@ public class UserService {
         return "";
     }
 
+    /*
+    public static String checkName(String username){
+        for(User user : userRepository.find()){
+            if(Objects.equals(username, user.getUsername())){
+                return user.getFullName();
+            }
+        }
+
+        return "";
+    }*/
+
 
     private static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
