@@ -10,12 +10,14 @@ public class User {
     private String fullName;
     private String speciality;
 
+
     public User(String username, String password, String role, String fullName, String speciality) {
         this.username = username;
         this.password = password;
         this.role = role;
         this.fullName = fullName;
         this.speciality = speciality;
+
     }
 
     public User() {

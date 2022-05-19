@@ -76,10 +76,12 @@ public class LoginController{
 
 
     public void cancelButton(ActionEvent event) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        URL adrr = HelloApplication.class.getResource("hello-view.fxml");
 
+
+        Parent root = FXMLLoader.load(adrr);
         Stage window = (Stage) cancelButton.getScene().getWindow();
-        window.setScene(new Scene(root,1200,800));
+        window.setScene(new Scene(root, 1200, 800));
 
     }
 

@@ -21,6 +21,8 @@ public class DoctorPageController {
     @FXML
     private Button myServicesButton;
 
+
+
     public void myServicesButtonOnAction(ActionEvent event) throws Exception{
         URL adrr = HelloApplication.class.getResource("doctorServices.fxml");
 
@@ -38,4 +40,6 @@ public class DoctorPageController {
         Stage window = (Stage) LogOutButton.getScene().getWindow();
         window.setScene(new Scene(root, 1200, 800));
     }
+
+
 }

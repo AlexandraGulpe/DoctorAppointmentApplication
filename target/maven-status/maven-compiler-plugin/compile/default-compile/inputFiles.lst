@@ -6,6 +6,7 @@
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/DoctorFacilitiesService.java
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/Controllers/PatientPageController.java
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/Controllers/DoctorPageController.java
+/Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/ServiceDoesNotExistException.java
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/HelloApplication.java
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/Controllers/DoctorProfilePageController.java
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/User.java

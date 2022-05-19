@@ -11,6 +11,7 @@ public class HelloApplication extends Application
     public void start(Stage primaryStage) throws Exception
     {
         UserService.initDatabase();
+        DoctorFacilitiesService.initDatabase();
 
         Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
         Scene scene = new Scene(root, 1200, 800);
