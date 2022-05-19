@@ -38,12 +38,13 @@ public class LoginController{
     private PasswordField passwordField;
 
 
+
     @FXML
     public void handleLoginAction() {
 
         if (UserService.checkUserCredentials(usernameField.getText(), passwordField.getText())) {
 
-            URL adrr = HelloApplication.class.getResource("doctorPage.fxml");
+            //URL adrr = HelloApplication.class.getResource("doctorPage.fxml");
             URL adrr2 = HelloApplication.class.getResource("patientPage.fxml");
 
             String role = UserService.checkRole(usernameField.getText());
@@ -53,9 +54,17 @@ public class LoginController{
 
             if(Objects.equals(role, "Doctor")) {
                 try {
-                    root = FXMLLoader.load(adrr);
-                    Stage window = (Stage) loginButton.getScene().getWindow();
-                    window.setScene(new Scene(root, 1200, 800));
+                    //root = FXMLLoader.load(adrr);
+                   FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/doctorPage.fxml"));
+                    root = (Parent)loader.load();
+                    DoctorPageController doctorPageController = loader.getController();
+                    doctorPageController.setUsername(usernameField.getText());
+                    Stage stage = new Stage();
+                    stage.setTitle("DoctorPage");
+                    stage.setScene(new Scene(root, 1200, 800));
+                    stage.show();
+                   /* Stage window = (Stage) loginButton.getScene().getWindow();
+                    window.setScene(new Scene(root, 1200, 800));*/
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

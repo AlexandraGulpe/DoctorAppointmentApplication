@@ -1,5 +1,6 @@
 package com.example.doctorappointmentapplication.Controllers;
 
+import com.example.doctorappointmentapplication.DoctorFacilitiesService;
 import com.example.doctorappointmentapplication.HelloApplication;
 
 import com.example.doctorappointmentapplication.UserService;
@@ -22,12 +23,22 @@ public class DoctorPageController {
     private Button myServicesButton;
 
 
+    private String username;
+
+    public void setUsername(String username){
+        this.username = username;
+    }
 
     public void myServicesButtonOnAction(ActionEvent event) throws Exception{
-        URL adrr = HelloApplication.class.getResource("doctorServices.fxml");
+        //URL adrr = HelloApplication.class.getResource("doctorServices.fxml");
+        //FXMLLoader fxmlLoader = new FXMLLoader()
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/doctorServices.fxml"));
+        Parent root = loader.load();
+        DoctorServicesPageController doctorServicesPageController = loader.getController();
+        doctorServicesPageController.setUsername(username);
+        doctorServicesPageController.setListView(DoctorFacilitiesService.getLista(username));
 
 
-        Parent root = FXMLLoader.load(adrr);
         Stage window = (Stage) myServicesButton.getScene().getWindow();
         window.setScene(new Scene(root, 1200, 800));
     }
