@@ -35,13 +35,13 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="305.0" layoutY="135.0" />
-      <TextField layoutX="304.0" layoutY="208.0" />
-      <TextField layoutX="305.0" layoutY="263.0" />
-      <TextField layoutX="305.0" layoutY="329.0" />
-      <TextField layoutX="305.0" layoutY="388.0" />
+      <TextField fx:id="phoneField" layoutX="305.0" layoutY="135.0" />
+      <TextField fx:id="emailField" layoutX="304.0" layoutY="208.0" />
+      <TextField fx:id="languageField" layoutX="305.0" layoutY="263.0" />
+      <TextField fx:id="educationField" layoutX="305.0" layoutY="329.0" />
+      <TextField fx:id="workField" layoutX="305.0" layoutY="388.0" />
       <ListView layoutX="718.0" layoutY="94.0" prefHeight="486.0" prefWidth="394.0" />
-      <Button layoutX="138.0" layoutY="488.0" mnemonicParsing="false" text="Save">
+      <Button fx:id="saveButton" layoutX="138.0" layoutY="488.0" mnemonicParsing="false" text="Save">
          <font>
             <Font size="18.0" />
          </font>

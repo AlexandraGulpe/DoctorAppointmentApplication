@@ -1,19 +1,13 @@
 package com.example.doctorappointmentapplication.Controllers;
 
-import com.example.doctorappointmentapplication.DoctorFacilitiesService;
-import com.example.doctorappointmentapplication.DoctorServices;
-import com.example.doctorappointmentapplication.ServiceAlreadyExistsException;
-import com.example.doctorappointmentapplication.ServiceDoesNotExistException;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import com.example.doctorappointmentapplication.services.DoctorFacilitiesService;
+import com.example.doctorappointmentapplication.exceptions.ServiceAlreadyExistsException;
+import com.example.doctorappointmentapplication.exceptions.ServiceDoesNotExistException;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import org.dizitart.no2.objects.ObjectRepository;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 

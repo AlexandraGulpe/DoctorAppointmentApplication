@@ -1,16 +1,16 @@
-package com.example.doctorappointmentapplication;
+package com.example.doctorappointmentapplication.services;
 
+import com.example.doctorappointmentapplication.model.User;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
-import com.example.doctorappointmentapplication.UsernameAlreadyExistsException;
-import com.example.doctorappointmentapplication.User;
+import com.example.doctorappointmentapplication.exceptions.UsernameAlreadyExistsException;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 
-import static com.example.doctorappointmentapplication.FileSystemService.getPathToFile;
+import static com.example.doctorappointmentapplication.services.FileSystemService.getPathToFile;
 
 public class UserService {
 

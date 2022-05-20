@@ -1,18 +1,15 @@
-package com.example.doctorappointmentapplication;
+package com.example.doctorappointmentapplication.services;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+import com.example.doctorappointmentapplication.exceptions.ServiceDoesNotExistException;
+import com.example.doctorappointmentapplication.model.DoctorServices;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 
-import static com.example.doctorappointmentapplication.FileSystemService.getPathToFile;
-import static org.dizitart.no2.objects.filters.ObjectFilters.and;
-
-import com.example.doctorappointmentapplication.User;
-import com.example.doctorappointmentapplication.DoctorServices;
-import com.example.doctorappointmentapplication.ServiceAlreadyExistsException;
-import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
+import com.example.doctorappointmentapplication.exceptions.ServiceAlreadyExistsException;
 
 
 public class DoctorFacilitiesService {
@@ -66,7 +63,7 @@ public class DoctorFacilitiesService {
         }
     }
 
-    public static String deleteLista(String username, String serviceName) throws ServiceDoesNotExistException{
+    public static String deleteLista(String username, String serviceName) throws ServiceDoesNotExistException {
         String str =  "";
         for (DoctorServices service : serviceRepository.find()){
             if(Objects.equals(serviceName, service.getService()) && Objects.equals(username, service.getUsername())){

@@ -1,4 +1,4 @@
-package com.example.doctorappointmentapplication;
+package com.example.doctorappointmentapplication.services;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;

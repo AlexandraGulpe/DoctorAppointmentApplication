@@ -1,4 +1,4 @@
-package com.example.doctorappointmentapplication;
+package com.example.doctorappointmentapplication.model;
 
 import org.dizitart.no2.objects.Id;
 

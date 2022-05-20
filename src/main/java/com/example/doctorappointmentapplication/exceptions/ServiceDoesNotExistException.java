@@ -1,4 +1,4 @@
-package com.example.doctorappointmentapplication;
+package com.example.doctorappointmentapplication.exceptions;
 
 public class ServiceDoesNotExistException extends Exception{
     private String username;
