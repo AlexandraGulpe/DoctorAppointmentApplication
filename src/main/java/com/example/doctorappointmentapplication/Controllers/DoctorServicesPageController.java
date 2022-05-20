@@ -43,6 +43,7 @@ public class DoctorServicesPageController {
     public void setListView(List<String> lst) {
         listView.getItems().addAll(lst);
     }
+
     public void handleAddServiceAction(){
         try{
             DoctorFacilitiesService.addService(DoctorFacilitiesService.getNextId(),nameField.getText(),descriptionField.getText(),priceField.getText(), username);

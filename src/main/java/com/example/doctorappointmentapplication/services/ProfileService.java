@@ -30,14 +30,14 @@ public class ProfileService {
     }
 
     public static void addProfile(int id, String phone, String email, String language, String education, String work, String username) throws ProfileAlreadyExistsException {
-        checkProfileDoesNotAlreadyExist(email);
+        checkProfileDoesNotAlreadyExist(phone);
         profileRepository.insert(new DoctorProfile(id,phone, email, language,education, work,username));
     }
 
-    private static void checkProfileDoesNotAlreadyExist(String email) throws ProfileAlreadyExistsException {
+    private static void checkProfileDoesNotAlreadyExist(String name) throws ProfileAlreadyExistsException {
         for (DoctorProfile profile : profileRepository.find()) {
-            if (Objects.equals(email, profile.getEmail()));
-                throw new ProfileAlreadyExistsException(email);
+            if (Objects.equals(name, profile.getPhone()));
+                throw new ProfileAlreadyExistsException(name);
         }
     }
 

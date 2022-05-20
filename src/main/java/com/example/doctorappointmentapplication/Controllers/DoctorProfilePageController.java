@@ -6,6 +6,7 @@ import com.example.doctorappointmentapplication.services.DoctorFacilitiesService
 import com.example.doctorappointmentapplication.services.ProfileService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -38,6 +39,7 @@ public class DoctorProfilePageController {
     @FXML
     private Text addMessage;
 
+
     private String username;
 
     public void setUsername(String username){
@@ -47,11 +49,12 @@ public class DoctorProfilePageController {
         listView.getItems().addAll(lst);
     }
 
+
     public void handleAddProfileAction(){
         try{
             ProfileService.addProfile(ProfileService.getNextId(),phoneField.getText(),emailField.getText(),languageField.getText(),educationField.getText(),workField.getText(), username);
             addMessage.setText("Information was saved in your profile");
-            listView.getItems().addAll(phoneField.getText() + " " + emailField.getText() + " " + languageField.getText() + " " + educationField.getText() + " " + workField.getText());
+            listView.getItems().addAll(phoneField.getText() + "; " + emailField.getText() + "; " + languageField.getText() + "; " + educationField.getText() + "; " + workField.getText());
 
         }catch (ProfileAlreadyExistsException e){
             addMessage.setText(e.getMessage());
