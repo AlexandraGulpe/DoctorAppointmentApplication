@@ -22,6 +22,9 @@ public class DoctorPageController {
     @FXML
     private Button myServicesButton;
 
+    @FXML
+    private Button myProfileButton;
+
 
     private String username;
 
@@ -41,6 +44,12 @@ public class DoctorPageController {
 
         Stage window = (Stage) myServicesButton.getScene().getWindow();
         window.setScene(new Scene(root, 1200, 800));
+    }
+
+    public void myProfileButtonOnAction(ActionEvent event) throws Exception{
+
+
+
     }
 
     public void logOutButtonOnAction(ActionEvent event) throws Exception{

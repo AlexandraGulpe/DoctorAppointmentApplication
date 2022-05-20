@@ -23,7 +23,7 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Button layoutX="379.0" layoutY="281.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="My Profile">
+      <Button fx:id="myProfileButton" layoutX="379.0" layoutY="281.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="My Profile">
          <font>
             <Font size="24.0" />
          </font>
