@@ -43,6 +43,9 @@ public class RegistrationController{
     @FXML
     private Text registrationMessage;
 
+    @FXML
+    private Button toLoginButton;
+
 
 
 
@@ -72,6 +75,16 @@ public class RegistrationController{
 
         Parent root = FXMLLoader.load(adrr);
         Stage window = (Stage) cancelButton.getScene().getWindow();
+        window.setScene(new Scene(root, 1200, 800));
+
+    }
+
+    public void toLoginButtonOnAction(ActionEvent event) throws  Exception{
+        URL adrr = HelloApplication.class.getResource("login.fxml");
+
+
+        Parent root = FXMLLoader.load(adrr);
+        Stage window = (Stage) toLoginButton.getScene().getWindow();
         window.setScene(new Scene(root, 1200, 800));
 
     }

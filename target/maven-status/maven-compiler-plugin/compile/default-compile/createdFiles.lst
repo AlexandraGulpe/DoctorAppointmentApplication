@@ -1,3 +1,4 @@
+com/example/doctorappointmentapplication/exceptions/ProfileDoesNotExistException.class
 com/example/doctorappointmentapplication/services/FileSystemService.class
 com/example/doctorappointmentapplication/exceptions/ServiceAlreadyExistsException.class
 com/example/doctorappointmentapplication/exceptions/UsernameAlreadyExistsException.class
