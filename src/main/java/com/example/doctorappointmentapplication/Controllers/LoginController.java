@@ -76,7 +76,7 @@ public class LoginController{
             }
 
         }else{
-                loginMessage.setText("Cannot login");
+                loginMessage.setText("Invalid credentials");
             }
         }
 

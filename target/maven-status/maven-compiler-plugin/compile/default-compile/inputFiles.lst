@@ -11,6 +11,7 @@
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/HelloApplication.java
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/Controllers/DoctorProfilePageController.java
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/model/User.java
+/Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/exceptions/ProfileDoesNotExistException.java
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/model/DoctorServices.java
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/Controllers/DoctorAppointmentsPageController.java
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/model/DoctorProfile.java
