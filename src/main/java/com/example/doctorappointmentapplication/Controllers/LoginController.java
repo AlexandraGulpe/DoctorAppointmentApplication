@@ -67,9 +67,17 @@ public class LoginController{
                 }
             }else {
                 try {
-                    root2 = FXMLLoader.load(adrr2);
-                    Stage window = (Stage) loginButton.getScene().getWindow();
-                    window.setScene(new Scene(root2, 1200, 800));
+                    //root = FXMLLoader.load(adrr);
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/patientPage.fxml"));
+                    root = (Parent)loader.load();
+                    PatientPageController patientPageController = loader.getController();
+                    patientPageController.setUsername(usernameField.getText());
+                    Stage stage = new Stage();
+                    stage.setTitle("PatientPage");
+                    stage.setScene(new Scene(root, 1200, 800));
+                    stage.show();
+                   /* Stage window = (Stage) loginButton.getScene().getWindow();
+                    window.setScene(new Scene(root, 1200, 800));*/
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
