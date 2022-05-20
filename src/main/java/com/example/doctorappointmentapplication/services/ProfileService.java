@@ -1,9 +1,7 @@
 package com.example.doctorappointmentapplication.services;
 
 import com.example.doctorappointmentapplication.exceptions.ProfileAlreadyExistsException;
-import com.example.doctorappointmentapplication.exceptions.ServiceAlreadyExistsException;
 import com.example.doctorappointmentapplication.model.DoctorProfile;
-import com.example.doctorappointmentapplication.model.DoctorServices;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 
