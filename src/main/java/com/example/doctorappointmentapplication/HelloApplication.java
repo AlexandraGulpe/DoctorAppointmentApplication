@@ -1,5 +1,8 @@
 package com.example.doctorappointmentapplication;
 
+import com.example.doctorappointmentapplication.services.DoctorFacilitiesService;
+import com.example.doctorappointmentapplication.services.ProfileService;
+import com.example.doctorappointmentapplication.services.UserService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,6 +14,8 @@ public class HelloApplication extends Application
     public void start(Stage primaryStage) throws Exception
     {
         UserService.initDatabase();
+        DoctorFacilitiesService.initDatabase();
+        ProfileService.initDatabase();
 
         Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
         Scene scene = new Scene(root, 1200, 800);

@@ -1,8 +1,8 @@
 package com.example.doctorappointmentapplication.Controllers;
 
 import com.example.doctorappointmentapplication.HelloApplication;
-import com.example.doctorappointmentapplication.UserService;
-import com.example.doctorappointmentapplication.UsernameAlreadyExistsException;
+import com.example.doctorappointmentapplication.services.UserService;
+import com.example.doctorappointmentapplication.exceptions.UsernameAlreadyExistsException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

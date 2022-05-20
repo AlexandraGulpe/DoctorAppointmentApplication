@@ -1,15 +1,13 @@
 package com.example.doctorappointmentapplication.Controllers;
 
 import com.example.doctorappointmentapplication.HelloApplication;
-import com.example.doctorappointmentapplication.UserService;
+import com.example.doctorappointmentapplication.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -18,7 +16,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
-import java.util.ResourceBundle;
 
 public class LoginController{
 
@@ -38,12 +35,13 @@ public class LoginController{
     private PasswordField passwordField;
 
 
+
     @FXML
     public void handleLoginAction() {
 
         if (UserService.checkUserCredentials(usernameField.getText(), passwordField.getText())) {
 
-            URL adrr = HelloApplication.class.getResource("doctorPage.fxml");
+            //URL adrr = HelloApplication.class.getResource("doctorPage.fxml");
             URL adrr2 = HelloApplication.class.getResource("patientPage.fxml");
 
             String role = UserService.checkRole(usernameField.getText());
@@ -53,9 +51,17 @@ public class LoginController{
 
             if(Objects.equals(role, "Doctor")) {
                 try {
-                    root = FXMLLoader.load(adrr);
-                    Stage window = (Stage) loginButton.getScene().getWindow();
-                    window.setScene(new Scene(root, 1200, 800));
+                    //root = FXMLLoader.load(adrr);
+                   FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/doctorPage.fxml"));
+                    root = (Parent)loader.load();
+                    DoctorPageController doctorPageController = loader.getController();
+                    doctorPageController.setUsername(usernameField.getText());
+                    Stage stage = new Stage();
+                    stage.setTitle("DoctorPage");
+                    stage.setScene(new Scene(root, 1200, 800));
+                    stage.show();
+                   /* Stage window = (Stage) loginButton.getScene().getWindow();
+                    window.setScene(new Scene(root, 1200, 800));*/
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -78,10 +84,10 @@ public class LoginController{
     public void cancelButton(ActionEvent event) throws Exception{
         URL adrr = HelloApplication.class.getResource("hello-view.fxml");
 
-        Parent root = FXMLLoader.load(adrr);
 
+        Parent root = FXMLLoader.load(adrr);
         Stage window = (Stage) cancelButton.getScene().getWindow();
-        window.setScene(new Scene(root,1200,800));
+        window.setScene(new Scene(root, 1200, 800));
 
     }
 

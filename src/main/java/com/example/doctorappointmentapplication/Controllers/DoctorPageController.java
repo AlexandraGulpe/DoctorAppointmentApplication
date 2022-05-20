@@ -1,15 +1,16 @@
 package com.example.doctorappointmentapplication.Controllers;
 
+import com.example.doctorappointmentapplication.model.DoctorProfile;
+import com.example.doctorappointmentapplication.services.DoctorFacilitiesService;
 import com.example.doctorappointmentapplication.HelloApplication;
 
-import com.example.doctorappointmentapplication.UserService;
+import com.example.doctorappointmentapplication.services.ProfileService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -21,13 +22,40 @@ public class DoctorPageController {
     @FXML
     private Button myServicesButton;
 
+    @FXML
+    private Button myProfileButton;
+
+
+    private String username;
+
+    public void setUsername(String username){
+        this.username = username;
+    }
+
     public void myServicesButtonOnAction(ActionEvent event) throws Exception{
-        URL adrr = HelloApplication.class.getResource("doctorServices.fxml");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/doctorServices.fxml"));
+        Parent root = loader.load();
+        DoctorServicesPageController doctorServicesPageController = loader.getController();
+        doctorServicesPageController.setUsername(username);
+        doctorServicesPageController.setListView(DoctorFacilitiesService.getLista(username));
 
 
-        Parent root = FXMLLoader.load(adrr);
         Stage window = (Stage) myServicesButton.getScene().getWindow();
         window.setScene(new Scene(root, 1200, 800));
+    }
+
+    public void myProfileButtonOnAction(ActionEvent event) throws Exception{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/doctorProfile.fxml"));
+        Parent root = loader.load();
+        DoctorProfilePageController doctorProfilePageController = loader.getController();
+        doctorProfilePageController.setUsername(username);
+        doctorProfilePageController.setListView(ProfileService.getLista(username));
+
+
+        Stage window = (Stage) myProfileButton.getScene().getWindow();
+        window.setScene(new Scene(root, 1200, 800));
+
+
     }
 
     public void logOutButtonOnAction(ActionEvent event) throws Exception{
@@ -38,4 +66,6 @@ public class DoctorPageController {
         Stage window = (Stage) LogOutButton.getScene().getWindow();
         window.setScene(new Scene(root, 1200, 800));
     }
+
+
 }

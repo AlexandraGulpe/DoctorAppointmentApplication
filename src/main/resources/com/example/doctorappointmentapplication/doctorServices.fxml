@@ -1,10 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.doctorappointmentapplication.Controllers.DoctorServicesPageController">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #E4DED2 #E4DED2;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.doctorappointmentapplication.Controllers.DoctorServicesPageController">
    <children>
-      <ListView layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="235.0" layoutY="69.0" prefHeight="48.0" prefWidth="149.0" text="Add service">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label layoutX="103.0" layoutY="167.0" text="Service">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label layoutX="88.0" layoutY="216.0" text="Description">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Label layoutX="120.0" layoutY="269.0" text="Price">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <TextField fx:id="nameField" layoutX="298.0" layoutY="167.0" prefHeight="30.0" prefWidth="200.0" />
+      <TextField fx:id="descriptionField" layoutX="298.0" layoutY="215.0" prefHeight="30.0" prefWidth="200.0" />
+      <TextField fx:id="priceField" layoutX="298.0" layoutY="268.0" prefHeight="30.0" prefWidth="200.0" />
+      <Text fx:id="addMessage" layoutX="419.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="252.95001220703125">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Button layoutX="235.0" layoutY="353.0" mnemonicParsing="false" onAction="#handleAddServiceAction" style="-fx-background-color: #C1E4F0 #C1E4F0;" text="Add Service">
+         <font>
+            <Font size="24.0" />
+         </font></Button>
+      <Label layoutX="859.0" layoutY="54.0" text="My services">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <Button layoutX="235.0" layoutY="674.0" mnemonicParsing="false" onAction="#handleDeleteServiceOnAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Delete Service">
+         <font>
+            <Font size="24.0" />
+         </font></Button>
+      <Text fx:id="addDeleteMessage" layoutX="419.0" layoutY="703.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="285.9060363769531">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <TextField fx:id="deletedNameField" layoutX="298.0" layoutY="584.0" prefHeight="30.0" prefWidth="200.0" />
+      <ListView fx:id="listView" layoutX="711.0" layoutY="129.0" prefHeight="615.0" prefWidth="416.0" />
+      <Label layoutX="220.0" layoutY="487.0" text="Delete Service">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="554.0" prefHeight="45.0" prefWidth="177.0" text="Service you want">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="98.0" layoutY="602.0" text="to delete">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
