@@ -28,52 +28,52 @@ public class DoctorListController {
     }
 
     public void setListView(List <String> list){
-        listView.getItems().addAll(list);
+
+        listView.getItems().addAll(UserService.getDoctorList());
 
 
     }
 
     @FXML
-    private Button DoctorInfoButton;
+    private Button DoctorProfilePageButton;
 
     @FXML
     private Button ScheduleAppointment;
 
     @FXML
-    private List<Integer> ids;
-    private String currentUsername;
-    private List<String> currentProfile;
+    public String currentSelectedItem;
+    private String username1;
 
     public void listViewSelectedItem() {
 
-        currentUsername = listView.getSelectionModel().getSelectedItem();
-
-
-
-
-
+        currentSelectedItem = listView.getSelectionModel().getSelectedItem();
+        username1 = UserService.findUsername(currentSelectedItem);
 
     }
 
-  /*  public void DoctorInfoButtonOnAction() throws Exception{
+
+
+   public void DoctorProfilePageButtonOnAction() throws Exception{
         Parent root;
         try {
             //root = FXMLLoader.load(adrr);
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/doctorProfile.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/viewDoctorProfilePage.fxml"));
             root = (Parent)loader.load();
-            DoctorProfilePageController doctorProfilePageController = loader.getController();
-            doctorProfilePageController.setUsername(username);
-
-
+            ViewDoctorProfilePageController viewDoctorProfilePageController = loader.getController();
+            viewDoctorProfilePageController.setUsername(username1);
+            Stage stage = new Stage();
+            stage.setTitle("Doctor Profile");
             stage.setScene(new Scene(root, 1200, 800));
             stage.show();
+
+
                     // Stage window = (Stage) loginButton.getScene().getWindow();
                    // window.setScene(new Scene(root, 1200, 800));
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-    }*/
+    }
 
 
 }

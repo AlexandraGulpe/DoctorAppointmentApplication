@@ -12,6 +12,7 @@ com\example\doctorappointmentapplication\model\DoctorProfile.class
 com\example\doctorappointmentapplication\model\User.class
 com\example\doctorappointmentapplication\services\ProfileService.class
 com\example\doctorappointmentapplication\Controllers\AppointmentHistoryController.class
+com\example\doctorappointmentapplication\Controllers\ViewDoctorProfilePageController.class
 com\example\doctorappointmentapplication\Controllers\DoctorProfilePageController.class
 com\example\doctorappointmentapplication\exceptions\ProfileDoesNotExistException.class
 com\example\doctorappointmentapplication\model\DoctorServices.class

@@ -110,4 +110,17 @@ public class UserService {
         return doctorList;
     }
 
+
+    public static String findUsername(String u) {
+        for(User user: userRepository.find() ){
+            if(Objects.equals(u,user.getUsername() + " " + user.getFullName() +" "+ user.getSpeciality())){
+                return user.getUsername();
+
+            }
+
+
+        }
+     return null;
+    }
+
 }

@@ -123,5 +123,4 @@ public class DoctorFacilitiesService {
         serviceRepository.remove(and(eq("service name",service),eq("description", description)), service_aux);
     }*/
 
-
 }
