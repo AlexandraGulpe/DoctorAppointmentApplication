@@ -41,7 +41,7 @@ public class PatientPageController {
     public void AppointmentHistoryButtonOnAction() throws Exception{
         Parent root;
         try {
-            //root = FXMLLoader.load(adrr);
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/appointmentHistory.fxml"));
             root = (Parent)loader.load();
             AppointmentHistoryController appointmentHistoryController = loader.getController();
@@ -51,8 +51,7 @@ public class PatientPageController {
             stage.setTitle("Appointment History");
             stage.setScene(new Scene(root, 1200, 800));
             stage.show();
-                   /* Stage window = (Stage) loginButton.getScene().getWindow();
-                    window.setScene(new Scene(root, 1200, 800));*/
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -73,8 +72,7 @@ public class PatientPageController {
             stage.setTitle("DoctorPage");
             stage.setScene(new Scene(root, 1200, 800));
             stage.show();
-                   /* Stage window = (Stage) loginButton.getScene().getWindow();
-                    window.setScene(new Scene(root, 1200, 800));*/
+
         } catch (IOException e) {
             e.printStackTrace();
         }

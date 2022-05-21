@@ -15,4 +15,5 @@ public class AppointmentService {
     public static void scheduleAppointment(Appointment a){
         AppointmentsRepository.insert(a);
     }
+
 }

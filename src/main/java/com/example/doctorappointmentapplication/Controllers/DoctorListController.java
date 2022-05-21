@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.List;
 
 import com.example.doctorappointmentapplication.services.UserService;
+import com.example.doctorappointmentapplication.model.User;
 
 public class DoctorListController {
 
@@ -43,11 +44,14 @@ public class DoctorListController {
     @FXML
     public String currentSelectedItem;
     private String username1;
+    private String doctorName;
 
     public void listViewSelectedItem() {
 
         currentSelectedItem = listView.getSelectionModel().getSelectedItem();
         username1 = UserService.findUsername(currentSelectedItem);
+        doctorName = UserService.findFullName(currentSelectedItem);
+
 
     }
 
@@ -63,18 +67,31 @@ public class DoctorListController {
             viewDoctorProfilePageController.setUsername(username1);
             viewDoctorProfilePageController.setListView();
             Stage stage = new Stage();
-            stage.setTitle("Doctor Profile");
+            stage.setTitle(doctorName + " Profile");
             stage.setScene(new Scene(root, 1200, 800));
             stage.show();
 
-
-                    // Stage window = (Stage) loginButton.getScene().getWindow();
-                   // window.setScene(new Scene(root, 1200, 800));
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
+    public void ScheduleAppointmentButtonOnAction() throws Exception{
+        Parent root;
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/scheduleAppointment.fxml"));
+            root = (Parent)loader.load();
+           ScheduleAppointmentController scheduleAppointmentController = loader.getController();
+            scheduleAppointmentController.setUsername(username,username1);
+            Stage stage = new Stage();
+            stage.setTitle("Schedule Appointment for doctor: "+ doctorName);
+            stage.setScene(new Scene(root, 1200, 800));
+            stage.show();
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        }
 }

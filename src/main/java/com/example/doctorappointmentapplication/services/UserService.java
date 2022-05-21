@@ -123,4 +123,16 @@ public class UserService {
      return null;
     }
 
+    public static String findFullName(String u) {
+        for(User user: userRepository.find() ){
+            if(Objects.equals(u,user.getUsername() + " " + user.getFullName() +" "+ user.getSpeciality())){
+                return user.getFullName();
+
+            }
+
+
+        }
+        return null;
+    }
+
 }

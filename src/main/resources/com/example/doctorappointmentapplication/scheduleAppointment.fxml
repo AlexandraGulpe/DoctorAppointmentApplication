@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.doctorappointmentapplication.Controllers.ScheduleAppointmentController">
+    <left>
+        <AnchorPane prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #D6E6ED;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="496.0" fitWidth="482.0" layoutX="51.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@doctor.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </left>
+    <right>
+        <AnchorPane prefHeight="200.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="TOP_CENTER" layoutX="286.0" layoutY="72.0" text="Schedule Appointment">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Label>
+
+                <Label layoutX="86.0" layoutY="200.0" text="Please enter day do appointment" textAlignment="CENTER">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="89.0" layoutY="400.0" text="Please enter a month" textAlignment="CENTER">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="189.0" layoutY="600.0" text="Please enter an hour from 10 to 16" textAlignment="CENTER">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="dayField" layoutX="241.0" layoutY="200.0" prefHeight="32.0" prefWidth="323.0" />
+                <TextField fx:id="monthField" layoutX="241.0" layoutY="400.0" prefHeight="32.0" prefWidth="323.0" />
+                <TextField fx:id="hourField" layoutX="241.0" layoutY="600.0" prefHeight="32.0" prefWidth="323.0" />
+
+            </children>
+        </AnchorPane>
+    </right>
+</BorderPane>
