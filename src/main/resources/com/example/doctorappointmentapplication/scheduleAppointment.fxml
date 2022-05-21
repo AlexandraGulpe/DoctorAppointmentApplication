@@ -31,19 +31,35 @@
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="89.0" layoutY="400.0" text="Please enter a month" textAlignment="CENTER">
+                <Label layoutX="89.0" layoutY="300.0" text="Please enter a month" textAlignment="CENTER">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="189.0" layoutY="600.0" text="Please enter an hour from 10 to 16" textAlignment="CENTER">
+                <Label layoutX="130.0" layoutY="400.0" text="Please insert year" textAlignment="CENTER">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="189.0" layoutY="500.0" text="Please enter desired hour(from 10 to 16)" textAlignment="CENTER">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
                 <TextField fx:id="dayField" layoutX="241.0" layoutY="200.0" prefHeight="32.0" prefWidth="323.0" />
-                <TextField fx:id="monthField" layoutX="241.0" layoutY="400.0" prefHeight="32.0" prefWidth="323.0" />
-                <TextField fx:id="hourField" layoutX="241.0" layoutY="600.0" prefHeight="32.0" prefWidth="323.0" />
+                <TextField fx:id="monthField" layoutX="241.0" layoutY="300.0" prefHeight="32.0" prefWidth="323.0" />
+                <TextField fx:id="yearField" layoutX="241.0" layoutY="400.0" prefHeight="32.0" prefWidth="323.0" />
+                <TextField fx:id="hourField" layoutX="241.0" layoutY="500.0" prefHeight="32.0" prefWidth="323.0" />
+
+                <Button fx:id="scheduleButton" layoutX="359.0" layoutY="462.0" mnemonicParsing="false" onAction="#handleScheduleOnAction" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="Schedule">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Button>
+                <Text fx:id="scheduledMessage" layoutX="175.0" layoutY="570.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="278.21630859375">
+                    <font>
+                        <Font size="18.0" />
+                    </font></Text>
 
             </children>
         </AnchorPane>

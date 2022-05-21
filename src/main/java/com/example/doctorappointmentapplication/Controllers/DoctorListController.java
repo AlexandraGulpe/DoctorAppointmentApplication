@@ -10,6 +10,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import com.example.doctorappointmentapplication.Controllers.DoctorPageController;
+import com.example.doctorappointmentapplication.exceptions.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -52,10 +53,7 @@ public class DoctorListController {
         username1 = UserService.findUsername(currentSelectedItem);
         doctorName = UserService.findFullName(currentSelectedItem);
 
-
     }
-
-
 
    public void DoctorProfilePageButtonOnAction() throws Exception{
         Parent root;
@@ -83,7 +81,7 @@ public class DoctorListController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/scheduleAppointment.fxml"));
             root = (Parent)loader.load();
            ScheduleAppointmentController scheduleAppointmentController = loader.getController();
-            scheduleAppointmentController.setUsername(username,username1);
+            scheduleAppointmentController.setUsername(username,doctorName);
             Stage stage = new Stage();
             stage.setTitle("Schedule Appointment for doctor: "+ doctorName);
             stage.setScene(new Scene(root, 1200, 800));
