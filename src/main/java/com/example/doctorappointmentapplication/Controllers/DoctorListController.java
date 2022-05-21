@@ -61,6 +61,7 @@ public class DoctorListController {
             root = (Parent)loader.load();
             ViewDoctorProfilePageController viewDoctorProfilePageController = loader.getController();
             viewDoctorProfilePageController.setUsername(username1);
+            viewDoctorProfilePageController.setListView();
             Stage stage = new Stage();
             stage.setTitle("Doctor Profile");
             stage.setScene(new Scene(root, 1200, 800));

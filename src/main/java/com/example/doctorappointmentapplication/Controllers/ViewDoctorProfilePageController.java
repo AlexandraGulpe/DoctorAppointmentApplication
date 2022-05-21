@@ -20,9 +20,10 @@ public class ViewDoctorProfilePageController {
     @FXML
     private ListView<String> listView;
 
-    public void setListView(List<String> list){
+    public void setListView(){
         listView.getItems().addAll(ProfileService.getLista(username));
-        listView.getItems().addAll(DoctorFacilitiesService.getAllServices(username));
+        listView.getItems().addAll("Services: \n");
+        listView.getItems().addAll(DoctorFacilitiesService.getLista(username));
 
 
     }
