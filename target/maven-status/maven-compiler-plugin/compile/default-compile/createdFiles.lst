@@ -1,11 +1,13 @@
 com\example\doctorappointmentapplication\exceptions\ServiceAlreadyExistsException.class
 com\example\doctorappointmentapplication\services\UserService.class
 com\example\doctorappointmentapplication\Controllers\PatientPageController.class
+com\example\doctorappointmentapplication\model\Appointment.class
 com\example\doctorappointmentapplication\Controllers\LoginController.class
 com\example\doctorappointmentapplication\Controllers\HelloController.class
 com\example\doctorappointmentapplication\exceptions\ServiceDoesNotExistException.class
 com\example\doctorappointmentapplication\exceptions\UsernameAlreadyExistsException.class
 com\example\doctorappointmentapplication\Controllers\DoctorServicesPageController.class
+com\example\doctorappointmentapplication\services\AppointmentService.class
 com\example\doctorappointmentapplication\model\DoctorProfile.class
 com\example\doctorappointmentapplication\model\User.class
 com\example\doctorappointmentapplication\services\ProfileService.class

@@ -1,12 +1,15 @@
 package com.example.doctorappointmentapplication.Controllers;
 
+import com.example.doctorappointmentapplication.services.ProfileService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import com.example.doctorappointmentapplication.Controllers.DoctorPageController;
 
 import java.io.IOException;
 import java.util.List;
@@ -36,17 +39,32 @@ public class DoctorListController {
     @FXML
     private Button ScheduleAppointment;
 
- /*   public void DoctorInfoButtonOnAction() throws Exception{
+    @FXML
+    private List<Integer> ids;
+    private String currentUsername;
+    private List<String> currentProfile;
+
+    public void listViewSelectedItem() {
+
+        currentUsername = listView.getSelectionModel().getSelectedItem();
+
+
+
+
+
+
+    }
+
+  /*  public void DoctorInfoButtonOnAction() throws Exception{
         Parent root;
         try {
             //root = FXMLLoader.load(adrr);
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/appointmentHistory.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/doctorProfile.fxml"));
             root = (Parent)loader.load();
-            Doctor appointmentHistoryController = loader.getController();
-            appointmentHistoryController.setUsername(username);
-            // appointmentHistoryController.setListView(UserService.getAppointmentList);
-            Stage stage = new Stage();
-            stage.setTitle("Appointment History");
+            DoctorProfilePageController doctorProfilePageController = loader.getController();
+            doctorProfilePageController.setUsername(username);
+
+
             stage.setScene(new Scene(root, 1200, 800));
             stage.show();
                     // Stage window = (Stage) loginButton.getScene().getWindow();
@@ -55,7 +73,7 @@ public class DoctorListController {
             e.printStackTrace();
         }
 
-    } */
+    }*/
 
 
 }

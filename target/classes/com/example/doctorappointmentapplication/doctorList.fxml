@@ -11,7 +11,7 @@
             fx:controller="com.example.doctorappointmentapplication.Controllers.DoctorListController"
             prefHeight="400.0" prefWidth="600.0">
 
-    <ListView fx:id="listView" layoutY="30" prefWidth="600" prefHeight="100"/>
+    <ListView fx:id="listView" layoutY="30" prefWidth="600" prefHeight="100" onMouseClicked="#listViewSelectedItem"/>
 
 </AnchorPane>
 
