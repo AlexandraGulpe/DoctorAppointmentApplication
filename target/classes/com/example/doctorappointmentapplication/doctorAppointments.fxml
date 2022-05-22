@@ -13,7 +13,10 @@
 
     <ListView fx:id="listView" layoutX="55.0" layoutY="148.0" onMouseClicked="#listViewSelectedItem" prefHeight="483.0" prefWidth="1095.0" />
     <HBox alignment="bottom_right" layoutX="35.0" layoutY="3.0" prefHeight="34.0" prefWidth="0.0" spacing="0" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-    <Text fx:id="addMessage" layoutX="220.0" layoutY="445.0" wrappingWidth="183.0" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+    <Text fx:id="addMessage" layoutX="469.0" layoutY="708.0" wrappingWidth="266.49999999999994" GridPane.columnIndex="1" GridPane.rowIndex="15">
+      <font>
+         <Font size="24.0" />
+      </font></Text>
      <Button layoutX="780.0" layoutY="670.0" onAction="#handleClickDenyAction" prefHeight="60.0" prefWidth="150.0" style="-fx-background-color: #C1E4F0 #C1E4F0;" text="Deny">
       <font>
          <Font size="24.0" />
