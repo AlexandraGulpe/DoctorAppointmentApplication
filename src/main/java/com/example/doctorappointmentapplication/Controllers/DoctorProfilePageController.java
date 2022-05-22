@@ -1,10 +1,7 @@
 package com.example.doctorappointmentapplication.Controllers;
 
 import com.example.doctorappointmentapplication.HelloApplication;
-import com.example.doctorappointmentapplication.exceptions.ProfileAlreadyExistsException;
-import com.example.doctorappointmentapplication.exceptions.ProfileDoesNotExistException;
-import com.example.doctorappointmentapplication.exceptions.ServiceAlreadyExistsException;
-import com.example.doctorappointmentapplication.exceptions.ServiceDoesNotExistException;
+import com.example.doctorappointmentapplication.exceptions.*;
 import com.example.doctorappointmentapplication.services.DoctorFacilitiesService;
 import com.example.doctorappointmentapplication.services.ProfileService;
 import javafx.event.ActionEvent;
@@ -60,6 +57,25 @@ public class DoctorProfilePageController {
     @FXML
     private Text addDeleteMessage;
 
+    @FXML
+    private TextField editPhone;
+
+    @FXML
+    private TextField editEmail;
+
+    @FXML
+    private TextField editLanguage;
+
+    @FXML
+    private TextField editEducation;
+
+    @FXML
+    private TextField editWork;
+
+    @FXML
+    private Text addEditMessage;
+
+
 
     private String username;
 
@@ -96,14 +112,62 @@ public class DoctorProfilePageController {
     }
 
     public void backButtonOnAction(ActionEvent event) throws  Exception{
-        URL adrr = HelloApplication.class.getResource("doctorPage.fxml");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/doctorPage.fxml"));
+        Parent root = loader.load();
+        DoctorPageController doctorPageController = loader.getController();
+        doctorPageController.setUsername(username);
 
-
-        Parent root = FXMLLoader.load(adrr);
-        Stage window = (Stage) backButton.getScene().getWindow();
-        window.setScene(new Scene(root, 1200, 800));
+        Stage window =(Stage) backButton.getScene().getWindow();
+        window.setScene(new Scene(root,1200,800));
 
     }
+
+    public void handleChangePhoneAction() {
+        try {
+            ProfileService.changePhone(username, editPhone.getText());
+            addEditMessage.setText("Phone Number Changed Successfully");
+        } catch (ProfileDoesNotExistException e) {
+            addEditMessage.setText(e.getMessage());
+        }
+    }
+
+    public void handleChangeEmailAction() {
+        try {
+            ProfileService.changeMail(username, editEmail.getText());
+            addEditMessage.setText("Email Address Changed Successfully");
+        } catch (EmailDoesNotExistException e) {
+            addEditMessage.setText(e.getMessage());
+        }
+    }
+
+    public void handleChangeLanguageAction() {
+        try {
+            ProfileService.changeLanguage(username, editLanguage.getText());
+            addEditMessage.setText("Languages Changed Successfully");
+        } catch (ProfileAlreadyExistsException e) {
+            addEditMessage.setText(e.getMessage());
+        }
+    }
+
+    public void handleChangeEducationAction() {
+        try {
+            ProfileService.changeEducation(username, editEducation.getText());
+            addEditMessage.setText("Education Changed Successfully");
+        } catch (ProfileAlreadyExistsException e) {
+            addEditMessage.setText(e.getMessage());
+        }
+    }
+
+    public void handleChangeWorkAction() {
+        try {
+            ProfileService.changeWork(username, editWork.getText());
+            addEditMessage.setText("Work Changed Successfully");
+        } catch (ProfileAlreadyExistsException e) {
+            addEditMessage.setText(e.getMessage());
+        }
+    }
+
+
 
 
 

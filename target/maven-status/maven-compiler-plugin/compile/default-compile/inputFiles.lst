@@ -22,6 +22,7 @@
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/Controllers/ViewDoctorProfilePageController.java
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/exceptions/HourIsAlreadyOccuppiedException.java
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/exceptions/ServiceDoesNotExistException.java
+/Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/exceptions/EmailDoesNotExistException.java
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/Controllers/RegistrationController.java
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/Controllers/DoctorPageController.java
 /Users/alexandragulpe/Desktop/DoctorAppointmentApplication/src/main/java/com/example/doctorappointmentapplication/exceptions/ServiceAlreadyExistsException.java

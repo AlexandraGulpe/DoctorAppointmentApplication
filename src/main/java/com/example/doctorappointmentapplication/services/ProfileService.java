@@ -1,6 +1,7 @@
 package com.example.doctorappointmentapplication.services;
 
 import com.example.doctorappointmentapplication.HelloApplication;
+import com.example.doctorappointmentapplication.exceptions.EmailDoesNotExistException;
 import com.example.doctorappointmentapplication.exceptions.ProfileAlreadyExistsException;
 import com.example.doctorappointmentapplication.exceptions.ProfileDoesNotExistException;
 import com.example.doctorappointmentapplication.exceptions.ServiceDoesNotExistException;
@@ -83,4 +84,68 @@ public class ProfileService {
 
     }
 
+    public static void changePhone(String username, String phone) throws ProfileDoesNotExistException {
+        int ok = 0;
+        for (DoctorProfile profile : profileRepository.find()) {
+            if (Objects.equals(username,profile.getUsername()) ) {
+                profile.setPhone(phone);
+                profileRepository.update(profile);
+                ok = 1;
+            }
+        }
+        if (ok == 0)
+            throw new ProfileDoesNotExistException(phone);
+    }
+
+    public static void changeMail(String username, String email) throws EmailDoesNotExistException {
+        int ok = 0;
+        for (DoctorProfile profile : profileRepository.find()) {
+            if (Objects.equals(username,profile.getUsername()) ) {
+                profile.setEmail(email);
+                profileRepository.update(profile);
+                ok = 1;
+            }
+        }
+        if (ok == 0)
+            throw new EmailDoesNotExistException(email);
+    }
+
+    public static void changeLanguage(String username, String language) throws ProfileAlreadyExistsException {
+        int ok = 0;
+        for (DoctorProfile profile : profileRepository.find()) {
+            if (Objects.equals(username,profile.getUsername()) ) {
+                profile.setLanguage(language);
+                profileRepository.update(profile);
+                ok = 1;
+            }
+        }
+        if (ok == 0)
+            throw new ProfileAlreadyExistsException(language);
+    }
+
+    public static void changeEducation(String username, String education) throws ProfileAlreadyExistsException {
+        int ok = 0;
+        for (DoctorProfile profile : profileRepository.find()) {
+            if (Objects.equals(username,profile.getUsername()) ) {
+                profile.setEducation(education);
+                profileRepository.update(profile);
+                ok = 1;
+            }
+        }
+        if (ok == 0)
+            throw new ProfileAlreadyExistsException(education);
+    }
+
+    public static void changeWork(String username, String work) throws ProfileAlreadyExistsException {
+        int ok = 0;
+        for (DoctorProfile profile : profileRepository.find()) {
+            if (Objects.equals(username,profile.getUsername()) ) {
+                profile.setWork(work);
+                profileRepository.update(profile);
+                ok = 1;
+            }
+        }
+        if (ok == 0)
+            throw new ProfileAlreadyExistsException(work);
+    }
 }
