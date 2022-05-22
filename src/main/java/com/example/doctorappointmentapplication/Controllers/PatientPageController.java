@@ -70,7 +70,7 @@ public class PatientPageController {
             doctorListController.setUsername(username);
             doctorListController.setListView(UserService.getDoctorList());
             Stage stage = new Stage();
-            stage.setTitle("DoctorPage");
+            stage.setTitle("DoctorPage"); 
             stage.setScene(new Scene(root, 1200, 800));
             stage.show();
 
