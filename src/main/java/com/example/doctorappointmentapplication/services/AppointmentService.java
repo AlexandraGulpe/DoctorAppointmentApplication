@@ -20,10 +20,10 @@ public class AppointmentService {
     }
     public static int getLastId(){
         int id=0;
-    for(Appointment appointment : AppointmentRepository.find()){
-        id= Math.max(id, appointment.getId());
-    }
-    return id;
+        for(Appointment appointment : AppointmentRepository.find()){
+            id= Math.max(id, appointment.getId());
+        }
+        return id;
     }
     public static void scheduleAppointment(int id,String patientUsername,String doctorUsername,String doctorName,String day,String month,String year,String hour){
         AppointmentRepository.insert(new Appointment(id,patientUsername,doctorUsername,doctorName,day,month,year,hour));
@@ -39,7 +39,7 @@ public class AppointmentService {
 
                 appointmentList.add("Doctor: " + appointment.getDoctorName()+ " \nOn date:" + appointment.getDay() +" \\"+
                         appointment.getMonth() + " \\" + appointment.getYear() + "\nAt:" + appointment.getHour() +
-                        "\nStatus: " + appointment.getAppointmentStatus() + "Message:" + appointment.getMessage());
+                        "\nStatus: " + appointment.getAppointmentStatus() + "\nMessage:" + appointment.getMessage());
 
             }
 
@@ -58,7 +58,7 @@ public class AppointmentService {
         for(Appointment appointment:AppointmentRepository.find()){
             if(Objects.equals(appointment.getDoctorName(),username) && Objects.equals(appointment.getAppointmentStatus(),"Pending")){
 
-                appointmentList.add("AppointmentID: " + appointment.getId() + "\n Doctor: " + appointment.getDoctorName()+ "\n On date: " + appointment.getDay() +" \\"+
+                appointmentList.add("AppointmentID: " + appointment.getId() + "\n User: " + appointment.getPatientUsername()+ "\n On date: " + appointment.getDay() +" \\"+
                         appointment.getMonth() + " \\" + appointment.getYear() + "\n At: " + appointment.getHour());
 
             }
@@ -73,12 +73,13 @@ public class AppointmentService {
 
     public static int findID(String u) {
         for(Appointment appointment: AppointmentRepository.find() ){
-            if(Objects.equals(u,appointment.getId()))
+            if(Objects.equals(u,("AppointmentID: " + appointment.getId() + "\n Doctor: " + appointment.getDoctorName()+ "\n On date: " + appointment.getDay() +" \\"+
+                    appointment.getMonth() + " \\" + appointment.getYear() + "\n At: " + appointment.getHour())))
                 return appointment.getId();
 
-            }
-        return -1;
         }
+        return -1;
+    }
 
     public static void setAppointmentStatus(int id, String status, String message){
         for(Appointment appointment : AppointmentRepository.find()){
