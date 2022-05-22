@@ -61,9 +61,9 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Text fx:id="addMessage" layoutX="336.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="180.0">
+      <Text fx:id="addMessage" layoutX="336.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="180.0">
          <font>
-            <Font size="18.0" />
+            <Font size="15.0" />
          </font>
       </Text>
       <Label layoutX="789.0" layoutY="71.0" text="My profile">
@@ -100,9 +100,9 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Text fx:id="addDeleteMessage" layoutX="719.0" layoutY="722.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="195.83197021484375">
+      <Text fx:id="addDeleteMessage" layoutX="953.0" layoutY="662.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="195.83197021484375">
          <font>
-            <Font size="18.0" />
+            <Font size="15.0" />
          </font>
       </Text>
       <Label layoutX="160.0" layoutY="462.0" text="Edit information in your profile">
@@ -145,5 +145,10 @@
       <Button fx:id="editLanguageButton" layoutX="486.0" layoutY="619.0" mnemonicParsing="false" onAction="#handleChangeLanguageAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Languages" />
       <Button fx:id="editEducationButton" layoutX="489.0" layoutY="667.0" mnemonicParsing="false" onAction="#handleChangeEducationAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Education" />
       <Button fx:id="editworkButton" layoutX="499.0" layoutY="719.0" mnemonicParsing="false" onAction="#handleChangeWorkAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Work" />
+      <Text fx:id="addEditMessage" layoutX="632.0" layoutY="724.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="180.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

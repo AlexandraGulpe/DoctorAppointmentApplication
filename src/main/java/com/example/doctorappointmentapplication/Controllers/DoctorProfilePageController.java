@@ -72,6 +72,9 @@ public class DoctorProfilePageController {
     @FXML
     private TextField editWork;
 
+    @FXML
+    private Text addEditMessage;
+
 
 
     private String username;
@@ -122,45 +125,45 @@ public class DoctorProfilePageController {
     public void handleChangePhoneAction() {
         try {
             ProfileService.changePhone(username, editPhone.getText());
-            addMessage.setText("Phone Number Changed Successfully");
+            addEditMessage.setText("Phone Number Changed Successfully");
         } catch (ProfileDoesNotExistException e) {
-            addMessage.setText(e.getMessage());
+            addEditMessage.setText(e.getMessage());
         }
     }
 
     public void handleChangeEmailAction() {
         try {
             ProfileService.changeMail(username, editEmail.getText());
-            addMessage.setText("Email Address Changed Successfully");
+            addEditMessage.setText("Email Address Changed Successfully");
         } catch (EmailDoesNotExistException e) {
-            addMessage.setText(e.getMessage());
+            addEditMessage.setText(e.getMessage());
         }
     }
 
     public void handleChangeLanguageAction() {
         try {
             ProfileService.changeLanguage(username, editLanguage.getText());
-            addMessage.setText("Languages Changed Successfully");
+            addEditMessage.setText("Languages Changed Successfully");
         } catch (ProfileAlreadyExistsException e) {
-            addMessage.setText(e.getMessage());
+            addEditMessage.setText(e.getMessage());
         }
     }
 
     public void handleChangeEducationAction() {
         try {
             ProfileService.changeEducation(username, editEducation.getText());
-            addMessage.setText("Education Changed Successfully");
+            addEditMessage.setText("Education Changed Successfully");
         } catch (ProfileAlreadyExistsException e) {
-            addMessage.setText(e.getMessage());
+            addEditMessage.setText(e.getMessage());
         }
     }
 
     public void handleChangeWorkAction() {
         try {
             ProfileService.changeWork(username, editWork.getText());
-            addMessage.setText("Work Changed Successfully");
+            addEditMessage.setText("Work Changed Successfully");
         } catch (ProfileAlreadyExistsException e) {
-            addMessage.setText(e.getMessage());
+            addEditMessage.setText(e.getMessage());
         }
     }
 
