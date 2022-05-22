@@ -38,8 +38,8 @@ public class AppointmentService {
         for(Appointment appointment:AppointmentRepository.find()){
             if(Objects.equals(appointment.getPatientUsername(),username)){
 
-                appointmentList.add("Doctor: " + appointment.getDoctorName()+ " On date:" + appointment.getDay() +" \\"+
-                        appointment.getMonth() + " \\" + appointment.getYear() + "At:" + appointment.getHour() + "Status: " + appointment.getAppointmentStatus());
+                appointmentList.add("Doctor: " + appointment.getDoctorName()+ " \nOn date:" + appointment.getDay() +" \\"+
+                        appointment.getMonth() + " \\" + appointment.getYear() + "\nAt:" + appointment.getHour() + "\nStatus: " + appointment.getAppointmentStatus());
 
             }
 
@@ -58,8 +58,8 @@ public class AppointmentService {
         for(Appointment appointment:AppointmentRepository.find()){
             if(Objects.equals(appointment.getDoctorName(),username) && Objects.equals(appointment.getAppointmentStatus(),"Pending")){
 
-                appointmentList.add("AppointmentID:" + appointment.getId() + " Doctor: " + appointment.getDoctorName()+ " On date:" + appointment.getDay() +" \\"+
-                        appointment.getMonth() + " \\" + appointment.getYear() + " At:" + appointment.getHour()  );
+                appointmentList.add("AppointmentID: " + appointment.getId() + "\n Doctor: " + appointment.getDoctorName()+ "\n On date: " + appointment.getDay() +" \\"+
+                        appointment.getMonth() + " \\" + appointment.getYear() + "\n At: " + appointment.getHour()  );
 
             }
 

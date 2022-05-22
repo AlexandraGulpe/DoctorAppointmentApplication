@@ -42,7 +42,7 @@ public class DoctorAppointmentsPageController {
         try {
             AppointmentService.setAppointmentStatus(currentID,"Accepted");
             listView.getItems().remove(currentSelectedItem);
-            addMessage.setText("Accepted appointment succsefully");
+            addMessage.setText("Accepted appointment successfully");
         } catch (Exception e) {
             addMessage.setText(e.getMessage());
         }
@@ -57,8 +57,6 @@ public class DoctorAppointmentsPageController {
         }catch (Exception e){
             addMessage.setText(e.getMessage());
         }
-
-
 
     }
 

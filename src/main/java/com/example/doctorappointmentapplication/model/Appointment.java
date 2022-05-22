@@ -12,7 +12,7 @@ public class Appointment {
     private String month;
     private String year;
     private String hour;
-    private String appointmentStatus; //
+    private String appointmentStatus;
 
 
     public Appointment(int id,String patientUsername,String doctorUsername,String doctorName,String day,String month,String year,String hour){

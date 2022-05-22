@@ -13,7 +13,7 @@
          <font>
             <Font size="30.0" />
          </font></Label>
-      <Button fx:id="myAppointmentsButton" layoutX="82.0" layoutY="281.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="My Pending Appointments" onAction="#myAppointmentsButtonOnAction" >
+      <Button fx:id="myAppointmentsButton" layoutX="82.0" layoutY="281.0" mnemonicParsing="false" onAction="#myAppointmentsButtonOnAction" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="Appointments">
          <font>
             <Font size="24.0" />
          </font>
@@ -23,7 +23,7 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="myProfileButton" layoutX="379.0" layoutY="281.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="My Profile" onAction="#myProfileButtonOnAction">
+      <Button fx:id="myProfileButton" layoutX="379.0" layoutY="281.0" mnemonicParsing="false" onAction="#myProfileButtonOnAction" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="My Profile">
          <font>
             <Font size="24.0" />
          </font>

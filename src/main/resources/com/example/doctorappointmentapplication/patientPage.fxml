@@ -14,12 +14,12 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button fx:id="AppointmentHistoryButton" layoutX="157.0" layoutY="231.0" mnemonicParsing="false" onAction="#AppointmentHistoryButtonOnAction" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="Appointment History">
+      <Button fx:id="AppointmentHistoryButton" layoutX="157.0" layoutY="231.0" mnemonicParsing="false" onAction="#AppointmentHistoryButtonOnAction" prefHeight="88.0" prefWidth="240.0" style="-fx-background-color: #C1E4F0;" text="Appointment History">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="DoctorsButton" layoutX="157.0" layoutY="407.0" mnemonicParsing="false" onAction="#doctorsButtonOnAction" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="View Doctors">
+      <Button fx:id="DoctorsButton" layoutX="157.0" layoutY="407.0" mnemonicParsing="false" onAction="#doctorsButtonOnAction" prefHeight="88.0" prefWidth="240.0" style="-fx-background-color: #C1E4F0;" text="View Doctors">
          <font>
             <Font size="24.0" />
          </font>
@@ -29,7 +29,7 @@
             <Image url="@PatientPagePhoto.png" />
          </image>
       </ImageView>
-      <Button fx:id="LogOutButton" layoutX="156.0" layoutY="570.0" mnemonicParsing="false" onAction="#logOutButtonOnAction" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="Log Out">
+      <Button fx:id="LogOutButton" layoutX="156.0" layoutY="570.0" mnemonicParsing="false" onAction="#logOutButtonOnAction" prefHeight="88.0" prefWidth="240.0" style="-fx-background-color: #C1E4F0;" text="Log Out">
          <font>
             <Font size="24.0" />
          </font>
