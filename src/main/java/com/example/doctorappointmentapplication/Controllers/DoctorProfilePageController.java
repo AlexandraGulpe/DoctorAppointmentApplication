@@ -137,6 +137,16 @@ public class DoctorProfilePageController {
         }
     }
 
+    public void handleChangeLanguageAction() {
+        try {
+            ProfileService.changeLanguage(username, editLanguage.getText());
+            addMessage.setText("Languages Changed Successfully");
+        } catch (ProfileAlreadyExistsException e) {
+            addMessage.setText(e.getMessage());
+        }
+    }
+
+
 
 
 

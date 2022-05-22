@@ -110,4 +110,16 @@ public class ProfileService {
             throw new EmailDoesNotExistException(email);
     }
 
+    public static void changeLanguage(String username, String language) throws ProfileAlreadyExistsException {
+        int ok = 0;
+        for (DoctorProfile profile : profileRepository.find()) {
+            if (Objects.equals(username,profile.getUsername()) ) {
+                profile.setLanguage(language);
+                profileRepository.update(profile);
+                ok = 1;
+            }
+        }
+        if (ok == 0)
+            throw new ProfileAlreadyExistsException(language);
+    }
 }
