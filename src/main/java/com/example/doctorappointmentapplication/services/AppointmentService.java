@@ -1,5 +1,7 @@
 package com.example.doctorappointmentapplication.services;
 
+import com.example.doctorappointmentapplication.exceptions.InvalidDayException;
+import com.example.doctorappointmentapplication.exceptions.InvalidMonthException;
 import javafx.scene.control.TextField;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
@@ -25,7 +27,8 @@ public class AppointmentService {
         }
         return id;
     }
-    public static void scheduleAppointment(int id,String patientUsername,String doctorUsername,String doctorName,String day,String month,String year,String hour){
+    public static void scheduleAppointment(int id,String patientUsername,String doctorUsername,String doctorName,String day,String month,String year,String hour) throws InvalidMonthException{
+        invalidMonthException(month);
         AppointmentRepository.insert(new Appointment(id,patientUsername,doctorUsername,doctorName,day,month,year,hour));
     }
 
@@ -89,8 +92,19 @@ public class AppointmentService {
                 AppointmentRepository.update(appointment);
             }
         }
+    }
+    public static void invalidDayException(String d,String m) throws InvalidDayException{
+
+
 
     }
+
+    public static void invalidMonthException(String a) throws InvalidMonthException{
+        if(Integer.parseInt(a,10)<1 || Integer.parseInt(a,10) >12){
+            throw new InvalidMonthException();
+        }
+    }
+
 
 
 
