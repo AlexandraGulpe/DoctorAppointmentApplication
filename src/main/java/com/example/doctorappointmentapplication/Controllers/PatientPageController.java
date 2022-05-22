@@ -2,6 +2,7 @@ package com.example.doctorappointmentapplication.Controllers;
 
 import com.example.doctorappointmentapplication.HelloApplication;
 
+import com.example.doctorappointmentapplication.services.AppointmentService;
 import com.example.doctorappointmentapplication.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,18 +42,17 @@ public class PatientPageController {
     public void AppointmentHistoryButtonOnAction() throws Exception{
         Parent root;
         try {
-            //root = FXMLLoader.load(adrr);
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/appointmentHistory.fxml"));
             root = (Parent)loader.load();
             AppointmentHistoryController appointmentHistoryController = loader.getController();
             appointmentHistoryController.setUsername(username);
-            // appointmentHistoryController.setListView(UserService.getAppointmentList);
+            appointmentHistoryController.setListView(AppointmentService.getPatientAppointmentList(username));
             Stage stage = new Stage();
             stage.setTitle("Appointment History");
             stage.setScene(new Scene(root, 1200, 800));
             stage.show();
-                   /* Stage window = (Stage) loginButton.getScene().getWindow();
-                    window.setScene(new Scene(root, 1200, 800));*/
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -73,8 +73,7 @@ public class PatientPageController {
             stage.setTitle("DoctorPage");
             stage.setScene(new Scene(root, 1200, 800));
             stage.show();
-                   /* Stage window = (Stage) loginButton.getScene().getWindow();
-                    window.setScene(new Scene(root, 1200, 800));*/
+
         } catch (IOException e) {
             e.printStackTrace();
         }

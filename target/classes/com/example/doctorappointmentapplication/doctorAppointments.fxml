@@ -5,10 +5,20 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.doctorappointmentapplication.Controllers.DoctorAppointmentsPageController"
             prefHeight="400.0" prefWidth="600.0">
+
+    <ListView fx:id="listView" layoutY="30" onMouseClicked="#listViewSelectedItem" prefHeight="100" prefWidth="600" />
+    <HBox alignment="bottom_right" spacing="0" GridPane.columnIndex="0" GridPane.rowIndex="5">
+        <Button onAction="#handleClickAcceptAction" text="Accept" />
+    </HBox>
+    <HBox alignment="bottom_right" spacing="0" GridPane.columnIndex="0" GridPane.rowIndex="10">
+        <Button onAction="#handleClickDenyAction" text="Deny" />
+    </HBox>
+    <Text fx:id="addMessage" GridPane.columnIndex="1" GridPane.rowIndex="15"/>
 
 </AnchorPane>

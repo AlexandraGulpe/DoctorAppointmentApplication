@@ -10,11 +10,13 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import com.example.doctorappointmentapplication.Controllers.DoctorPageController;
+import com.example.doctorappointmentapplication.exceptions.*;
 
 import java.io.IOException;
 import java.util.List;
 
 import com.example.doctorappointmentapplication.services.UserService;
+import com.example.doctorappointmentapplication.model.User;
 
 public class DoctorListController {
 
@@ -28,52 +30,66 @@ public class DoctorListController {
     }
 
     public void setListView(List <String> list){
-        listView.getItems().addAll(list);
+
+        listView.getItems().addAll(UserService.getDoctorList());
 
 
     }
 
     @FXML
-    private Button DoctorInfoButton;
+    private Button DoctorProfilePageButton;
 
     @FXML
     private Button ScheduleAppointment;
 
     @FXML
-    private List<Integer> ids;
-    private String currentUsername;
-    private List<String> currentProfile;
+    private String currentSelectedItem;
+    private String username1;
+    private String doctorName;
 
     public void listViewSelectedItem() {
 
-        currentUsername = listView.getSelectionModel().getSelectedItem();
-
-
-
-
-
+        currentSelectedItem = listView.getSelectionModel().getSelectedItem();
+        username1 = UserService.findUsername(currentSelectedItem);
+        doctorName = UserService.findFullName(currentSelectedItem);
 
     }
 
-  /*  public void DoctorInfoButtonOnAction() throws Exception{
+   public void DoctorProfilePageButtonOnAction() throws Exception{
         Parent root;
         try {
             //root = FXMLLoader.load(adrr);
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/doctorProfile.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/viewDoctorProfilePage.fxml"));
             root = (Parent)loader.load();
-            DoctorProfilePageController doctorProfilePageController = loader.getController();
-            doctorProfilePageController.setUsername(username);
-
-
+            ViewDoctorProfilePageController viewDoctorProfilePageController = loader.getController();
+            viewDoctorProfilePageController.setUsername(username1);
+            viewDoctorProfilePageController.setListView();
+            Stage stage = new Stage();
+            stage.setTitle(doctorName + " Profile");
             stage.setScene(new Scene(root, 1200, 800));
             stage.show();
-                    // Stage window = (Stage) loginButton.getScene().getWindow();
-                   // window.setScene(new Scene(root, 1200, 800));
+
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-    }*/
+    }
 
+    public void ScheduleAppointmentButtonOnAction() throws Exception{
+        Parent root;
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/scheduleAppointment.fxml"));
+            root = (Parent)loader.load();
+           ScheduleAppointmentController scheduleAppointmentController = loader.getController();
+            scheduleAppointmentController.setUsername(username,username1,doctorName);
+            Stage stage = new Stage();
+            stage.setTitle("Schedule Appointment for doctor: "+ doctorName);
+            stage.setScene(new Scene(root, 1200, 800));
+            stage.show();
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        }
 }
