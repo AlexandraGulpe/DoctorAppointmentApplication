@@ -1,14 +1,25 @@
 package com.example.doctorappointmentapplication.Controllers;
 
+import com.example.doctorappointmentapplication.HelloApplication;
+import com.example.doctorappointmentapplication.model.DoctorServices;
+import com.example.doctorappointmentapplication.services.AppointmentService;
 import com.example.doctorappointmentapplication.services.DoctorFacilitiesService;
 import com.example.doctorappointmentapplication.exceptions.ServiceAlreadyExistsException;
 import com.example.doctorappointmentapplication.exceptions.ServiceDoesNotExistException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
+import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 
 
 public class DoctorServicesPageController {
@@ -33,6 +44,18 @@ public class DoctorServicesPageController {
     @FXML
     private ListView<String> listView;
 
+    @FXML
+    private TextField editNameField;
+
+    @FXML
+    private TextField editDescriptionField;
+
+    @FXML
+    private TextField editPriceField;
+
+    @FXML
+    private Button backButton;
+
 
 
     private String username;
@@ -48,7 +71,7 @@ public class DoctorServicesPageController {
         try{
             DoctorFacilitiesService.addService(DoctorFacilitiesService.getNextId(),nameField.getText(),descriptionField.getText(),priceField.getText(), username);
             addMessage.setText("Service added");
-            listView.getItems().addAll(nameField.getText() + " " + descriptionField.getText() + " " + priceField.getText());
+            listView.getItems().addAll("Service: " + nameField.getText() + "\nDescription: " + descriptionField.getText() + "\nPrice: " + priceField.getText());
 
         }catch (ServiceAlreadyExistsException e){
             addMessage.setText(e.getMessage());
@@ -57,7 +80,6 @@ public class DoctorServicesPageController {
 
 
     public void handleDeleteServiceOnAction() {
-        //DoctorFacilitiesService.deleteService(deletedNameField.getText());
         try {
             addDeleteMessage.setText("Service deleted");
             String str = DoctorFacilitiesService.deleteLista(username, deletedNameField.getText());
@@ -69,5 +91,34 @@ public class DoctorServicesPageController {
 
     }
 
+    public void handleChangeDescriptionAction() {
+        try {
+            DoctorFacilitiesService.changeDescription(editNameField.getText(), username, editDescriptionField.getText());
+            addMessage.setText("Service Description Changed Successfully");
+        } catch (ServiceDoesNotExistException e) {
+            addMessage.setText(e.getMessage());
+        }
+    }
+
+    public void handleChangePriceAction() {
+        try {
+            DoctorFacilitiesService.changePrice(editNameField.getText(), username, editPriceField.getText());
+            addMessage.setText("Service Price Changed Successfully");
+        } catch (ServiceDoesNotExistException e) {
+            addMessage.setText(e.getMessage());
+        }
+    }
+
+
+    public void backButtonOnAction(ActionEvent event) throws  Exception{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/doctorPage.fxml"));
+        Parent root = loader.load();
+        DoctorPageController doctorPageController = loader.getController();
+        doctorPageController.setUsername(username);
+
+        Stage window =(Stage) backButton.getScene().getWindow();
+        window.setScene(new Scene(root,1200,800));
+
+    }
 
 }
