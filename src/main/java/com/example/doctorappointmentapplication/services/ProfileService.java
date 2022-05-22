@@ -83,4 +83,17 @@ public class ProfileService {
 
     }
 
+    public static void changePhone(String username, String phone) throws ProfileDoesNotExistException {
+        int ok = 0;
+        for (DoctorProfile profile : profileRepository.find()) {
+            if (Objects.equals(username,profile.getUsername()) ) {
+                profile.setPhone(phone);
+                profileRepository.update(profile);
+                ok = 1;
+            }
+        }
+        if (ok == 0)
+            throw new ProfileDoesNotExistException(phone);
+    }
+
 }

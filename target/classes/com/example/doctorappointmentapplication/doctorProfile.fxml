@@ -55,7 +55,7 @@
          <font>
             <Font size="15.0" />
          </font></TextField>
-      <ListView fx:id="listView" layoutX="559.0" layoutY="128.0" prefHeight="361.0" prefWidth="560.0" />
+      <ListView fx:id="listView" layoutX="589.0" layoutY="128.0" prefHeight="361.0" prefWidth="560.0" />
       <Button fx:id="saveButton" layoutX="234.0" layoutY="390.0" mnemonicParsing="false" onAction="#handleAddProfileAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Save">
          <font>
             <Font size="18.0" />
@@ -76,21 +76,21 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="604.0" layoutY="519.0" text="You can delete your information by entering your mail address:  ">
+      <Label layoutX="632.0" layoutY="519.0" text="You can delete your information by entering your mail address:  ">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="559.0" layoutY="583.0" text="Email Address">
+      <Label alignment="CENTER" layoutX="644.0" layoutY="583.0" text="Email Address">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="deleteInfoTextField" layoutX="828.0" layoutY="581.0">
+      <TextField fx:id="deleteInfoTextField" layoutX="867.0" layoutY="581.0">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <Button fx:id="deleteButton" layoutX="707.0" layoutY="638.0" mnemonicParsing="false" onAction="#handleDeleteServiceOnAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Delete information">
+      <Button fx:id="deleteButton" layoutX="736.0" layoutY="638.0" mnemonicParsing="false" onAction="#handleDeleteServiceOnAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Delete information">
          <font>
             <Font size="18.0" />
          </font>
@@ -135,10 +135,15 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="300.0" layoutY="520.0" />
-      <TextField layoutX="300.0" layoutY="570.0" />
-      <TextField layoutX="300.0" layoutY="620.0" />
-      <TextField layoutX="300.0" layoutY="670.0" />
-      <TextField layoutX="300.0" layoutY="720.0" />
+      <TextField fx:id="editPhone" layoutX="300.0" layoutY="520.0" />
+      <TextField fx:id="editEmail" layoutX="300.0" layoutY="570.0" />
+      <TextField fx:id="editLanguage" layoutX="300.0" layoutY="620.0" />
+      <TextField fx:id="editEducation" layoutX="300.0" layoutY="670.0" />
+      <TextField fx:id="editWork" layoutX="300.0" layoutY="720.0" />
+      <Button fx:id="editPhoneButton" layoutX="499.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleChangePhoneAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Phone" />
+      <Button fx:id="editMailButton" layoutX="502.0" layoutY="568.0" mnemonicParsing="false" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Email" />
+      <Button fx:id="editLanguageButton" layoutX="486.0" layoutY="619.0" mnemonicParsing="false" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Languages" />
+      <Button fx:id="editEducationButton" layoutX="489.0" layoutY="667.0" mnemonicParsing="false" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Education" />
+      <Button fx:id="editworkButton" layoutX="499.0" layoutY="719.0" mnemonicParsing="false" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Work" />
    </children>
 </AnchorPane>

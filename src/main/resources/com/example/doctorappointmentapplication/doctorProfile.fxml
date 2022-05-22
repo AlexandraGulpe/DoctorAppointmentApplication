@@ -140,7 +140,7 @@
       <TextField fx:id="editLanguage" layoutX="300.0" layoutY="620.0" />
       <TextField fx:id="editEducation" layoutX="300.0" layoutY="670.0" />
       <TextField fx:id="editWork" layoutX="300.0" layoutY="720.0" />
-      <Button fx:id="editPhoneButton" layoutX="499.0" layoutY="521.0" mnemonicParsing="false" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Phone" />
+      <Button fx:id="editPhoneButton" layoutX="499.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleChangePhoneAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Phone" />
       <Button fx:id="editMailButton" layoutX="502.0" layoutY="568.0" mnemonicParsing="false" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Email" />
       <Button fx:id="editLanguageButton" layoutX="486.0" layoutY="619.0" mnemonicParsing="false" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Languages" />
       <Button fx:id="editEducationButton" layoutX="489.0" layoutY="667.0" mnemonicParsing="false" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Education" />

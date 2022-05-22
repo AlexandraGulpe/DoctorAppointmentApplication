@@ -122,6 +122,15 @@ public class DoctorProfilePageController {
 
     }
 
+    public void handleChangePhoneAction() {
+        try {
+            ProfileService.changePhone(username, editPhone.getText());
+            addMessage.setText("Phone Number Changed Successfully");
+        } catch (ProfileDoesNotExistException e) {
+            addMessage.setText(e.getMessage());
+        }
+    }
+
 
 
 
