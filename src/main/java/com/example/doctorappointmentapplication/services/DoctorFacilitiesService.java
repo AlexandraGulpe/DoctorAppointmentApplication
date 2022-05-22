@@ -93,7 +93,7 @@ public class DoctorFacilitiesService {
         int ok = 0;
         for (DoctorServices service : serviceRepository.find()) {
             if (Objects.equals(username,service.getUsername()) && Objects.equals(name, service.getService())) {
-                service.setDescription(price);
+                service.setPrice(price);
                 serviceRepository.update(service);
                 ok = 1;
             }

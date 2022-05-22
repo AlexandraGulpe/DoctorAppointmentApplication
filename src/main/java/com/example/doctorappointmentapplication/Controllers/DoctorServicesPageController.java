@@ -1,6 +1,8 @@
 package com.example.doctorappointmentapplication.Controllers;
 
 import com.example.doctorappointmentapplication.HelloApplication;
+import com.example.doctorappointmentapplication.model.DoctorServices;
+import com.example.doctorappointmentapplication.services.AppointmentService;
 import com.example.doctorappointmentapplication.services.DoctorFacilitiesService;
 import com.example.doctorappointmentapplication.exceptions.ServiceAlreadyExistsException;
 import com.example.doctorappointmentapplication.exceptions.ServiceDoesNotExistException;
@@ -17,6 +19,7 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 
 
 public class DoctorServicesPageController {
@@ -91,19 +94,30 @@ public class DoctorServicesPageController {
     public void handleChangeDescriptionAction() {
         try {
             DoctorFacilitiesService.changeDescription(editNameField.getText(), username, editDescriptionField.getText());
-            addMessage.setText("Property Description Changed Successfully");
+            addMessage.setText("Service Description Changed Successfully");
         } catch (ServiceDoesNotExistException e) {
             addMessage.setText(e.getMessage());
         }
     }
 
+    public void handleChangePriceAction() {
+        try {
+            DoctorFacilitiesService.changePrice(editNameField.getText(), username, editPriceField.getText());
+            addMessage.setText("Service Price Changed Successfully");
+        } catch (ServiceDoesNotExistException e) {
+            addMessage.setText(e.getMessage());
+        }
+    }
+
+
     public void backButtonOnAction(ActionEvent event) throws  Exception{
-        URL adrr = HelloApplication.class.getResource("doctorPage.fxml");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/doctorPage.fxml"));
+        Parent root = loader.load();
+        DoctorPageController doctorPageController = loader.getController();
+        doctorPageController.setUsername(username);
 
-
-        Parent root = FXMLLoader.load(adrr);
-        Stage window = (Stage) backButton.getScene().getWindow();
-        window.setScene(new Scene(root, 1200, 800));
+        Stage window =(Stage) backButton.getScene().getWindow();
+        window.setScene(new Scene(root,1200,800));
 
     }
 

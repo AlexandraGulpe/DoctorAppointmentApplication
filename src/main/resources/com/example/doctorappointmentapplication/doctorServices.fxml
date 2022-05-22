@@ -29,11 +29,11 @@
       <TextField fx:id="nameField" layoutX="300.0" layoutY="125.0" prefHeight="30.0" prefWidth="200.0" />
       <TextField fx:id="descriptionField" layoutX="300.0" layoutY="175.0" prefHeight="30.0" prefWidth="200.0" />
       <TextField fx:id="priceField" layoutX="300.0" layoutY="225.0" prefHeight="30.0" prefWidth="200.0" />
-      <Text fx:id="addMessage" layoutX="416.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="252.95001220703125">
+      <Text fx:id="addMessage" layoutX="661.0" layoutY="727.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="252.95001220703125">
          <font>
             <Font size="18.0" />
          </font></Text>
-      <Button layoutX="280.0" layoutY="275.0" mnemonicParsing="false" onAction="#handleAddServiceAction" style="-fx-background-color: #C1E4F0 #C1E4F0;" text="Add Service">
+      <Button layoutX="324.0" layoutY="272.0" mnemonicParsing="false" onAction="#handleAddServiceAction" style="-fx-background-color: #C1E4F0 #C1E4F0;" text="Add Service">
          <font>
             <Font size="24.0" />
          </font></Button>
@@ -41,7 +41,7 @@
          <font>
             <Font size="24.0" />
          </font></Label>
-      <Button layoutX="274.0" layoutY="694.0" mnemonicParsing="false" onAction="#handleDeleteServiceOnAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Delete Service">
+      <Button layoutX="312.0" layoutY="702.0" mnemonicParsing="false" onAction="#handleDeleteServiceOnAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Delete Service">
          <font>
             <Font size="24.0" />
          </font></Button>
@@ -49,14 +49,14 @@
          <font>
             <Font size="18.0" />
          </font></Text>
-      <TextField fx:id="deletedNameField" layoutX="300.0" layoutY="619.0" prefHeight="30.0" prefWidth="200.0" />
+      <TextField fx:id="deletedNameField" layoutX="300.0" layoutY="633.0" prefHeight="30.0" prefWidth="200.0" />
       <ListView fx:id="listView" layoutX="673.0" layoutY="129.0" prefHeight="519.0" prefWidth="489.0" />
-      <Label layoutX="62.0" layoutY="582.0" prefHeight="45.0" prefWidth="177.0" text="Service you want">
+      <Label layoutX="61.0" layoutY="612.0" prefHeight="45.0" prefWidth="177.0" text="Service you want">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="101.0" layoutY="637.0" text="to delete">
+      <Label layoutX="97.0" layoutY="649.0" text="to delete">
          <font>
             <Font size="24.0" />
          </font>
@@ -73,12 +73,12 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="editPriceButton" layoutX="448.0" layoutY="511.0" mnemonicParsing="false" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Price">
+      <Button fx:id="editPriceButton" layoutX="351.0" layoutY="511.0" mnemonicParsing="false" onAction="#handleChangePriceAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Price">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="editDescriptionButton" layoutX="105.0" layoutY="511.0" mnemonicParsing="false" onAction="#handleChangeDescriptionAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Description">
+      <Button fx:id="editDescriptionButton" layoutX="54.0" layoutY="511.0" mnemonicParsing="false" onAction="#handleChangeDescriptionAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Description">
          <font>
             <Font size="24.0" />
          </font>
