@@ -15,7 +15,7 @@ import java.util.Objects;
 public class DoctorAppointmentsPageController {
 
     private static String username;
-    private String currentSelectedItem;
+    private String currentSelectedItem=null;
 
     @FXML
     private ListView<String> listView;
@@ -53,7 +53,12 @@ public class DoctorAppointmentsPageController {
             throw new NoDoctorCommentAddedException();
 
         }
+    }
 
+    public void noAppointmentSelectedException() throws NoAppointmentSelectedException{
+        if(currentSelectedItem == null){
+            throw new NoAppointmentSelectedException();
+        }
 
     }
 
@@ -61,11 +66,16 @@ public class DoctorAppointmentsPageController {
 
     public void handleClickAcceptAction() {
         try {
+            noAppointmentSelectedException();
             noCommentAddedException();
 
             AppointmentService.setAppointmentStatus(currentID,"Accepted","Observation: " + doctorComment.getText());
             listView.getItems().remove(currentSelectedItem);
             addMessage.setText("Accepted appointment successfully");
+
+        }catch (NoAppointmentSelectedException e){
+            errorMessage.setText(e.getMessage());
+
         } catch(NoDoctorCommentAddedException e){
             errorMessage.setText(e.getMessage());
         }
@@ -74,11 +84,15 @@ public class DoctorAppointmentsPageController {
 
     public void handleClickDenyAction(){
         try{
+            noAppointmentSelectedException();
             noCommentAddedException();
 
             AppointmentService.setAppointmentStatus(currentID,"Denied","Reason: " + doctorComment.getText());
             listView.getItems().remove(currentSelectedItem);
             addMessage.setText("Removed appointment successfully");
+
+        }catch (NoAppointmentSelectedException e){
+            errorMessage.setText(e.getMessage());
 
         }catch(NoDoctorCommentAddedException e){
             errorMessage.setText(e.getMessage());
