@@ -71,6 +71,25 @@ public class AppointmentService {
 
     }
 
+    public static int findID(String u) {
+        for(Appointment appointment: AppointmentRepository.find() ){
+            if(Objects.equals(u,appointment.getId()))
+                return appointment.getId();
+
+            }
+        return -1;
+        }
+
+    public static void setAppointmentStatus(int id,String status){
+        for(Appointment appointment : AppointmentRepository.find()){
+            if(Objects.equals(id,appointment.getId())){
+                appointment.setAppointmentStatus(status);
+                AppointmentRepository.update(appointment);
+            }
+        }
+
+    }
+
 
 
    /* public static List<String> getDoctorApprovedAppointmentList(String name){

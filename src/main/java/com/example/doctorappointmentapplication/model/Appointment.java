@@ -22,6 +22,7 @@ public class Appointment {
         this.doctorName=doctorName;
         this.day=day;
         this.month=month;
+        this.year=year;
         this.hour=hour;
         this.appointmentStatus="Pending";
 
@@ -49,6 +50,9 @@ public class Appointment {
     }
     public String getAppointmentStatus(){
         return appointmentStatus;
+    }
+    public void setAppointmentStatus(String s){
+        this.appointmentStatus=s;
     }
 
 }

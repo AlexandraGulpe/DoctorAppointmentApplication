@@ -4,6 +4,7 @@ C:\Users\Raidmax\Desktop\a\DoctorAppointmentApplication\src\main\java\com\exampl
 C:\Users\Raidmax\Desktop\a\DoctorAppointmentApplication\src\main\java\com\example\doctorappointmentapplication\exceptions\HourIsAlreadyOccuppiedException.java
 C:\Users\Raidmax\Desktop\a\DoctorAppointmentApplication\src\main\java\com\example\doctorappointmentapplication\Controllers\PatientPageController.java
 C:\Users\Raidmax\Desktop\a\DoctorAppointmentApplication\src\main\java\com\example\doctorappointmentapplication\Controllers\RegistrationController.java
+C:\Users\Raidmax\Desktop\a\DoctorAppointmentApplication\src\main\java\com\example\doctorappointmentapplication\exceptions\NoAppointmentSelectedException.java
 C:\Users\Raidmax\Desktop\a\DoctorAppointmentApplication\src\main\java\com\example\doctorappointmentapplication\exceptions\ServiceAlreadyExistsException.java
 C:\Users\Raidmax\Desktop\a\DoctorAppointmentApplication\src\main\java\com\example\doctorappointmentapplication\Controllers\DoctorAppointmentsPageController.java
 C:\Users\Raidmax\Desktop\a\DoctorAppointmentApplication\src\main\java\com\example\doctorappointmentapplication\Controllers\DoctorListController.java
