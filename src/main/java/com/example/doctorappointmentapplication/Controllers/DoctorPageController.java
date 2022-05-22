@@ -1,6 +1,7 @@
 package com.example.doctorappointmentapplication.Controllers;
 
 import com.example.doctorappointmentapplication.model.DoctorProfile;
+import com.example.doctorappointmentapplication.services.AppointmentService;
 import com.example.doctorappointmentapplication.services.DoctorFacilitiesService;
 import com.example.doctorappointmentapplication.HelloApplication;
 
@@ -24,6 +25,9 @@ public class DoctorPageController {
 
     @FXML
     private Button myProfileButton;
+
+    @FXML
+    private Button myAppointmentsButton;
 
 
     private String username;
@@ -54,6 +58,19 @@ public class DoctorPageController {
 
         Stage window = (Stage) myProfileButton.getScene().getWindow();
         window.setScene(new Scene(root, 1200, 800));
+
+
+    }
+    public void myAppointmentsButtonOnAction(ActionEvent event) throws Exception{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/doctorAppointments.fxml"));
+        Parent root = loader.load();
+        DoctorAppointmentsPageController doctorAppointmentsPageController = loader.getController();
+        doctorAppointmentsPageController.setUsername(username);
+        doctorAppointmentsPageController.setListView(AppointmentService.getDoctorPendingAppointmentList(username));
+
+        Stage window =(Stage) myAppointmentsButton.getScene().getWindow();
+        window.setScene(new Scene(root,1200,800));
+
 
 
     }

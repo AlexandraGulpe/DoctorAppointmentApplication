@@ -14,12 +14,12 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button layoutX="157.0" layoutY="231.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="Doctors">
+      <Button fx:id="AppointmentHistoryButton" layoutX="157.0" layoutY="231.0" mnemonicParsing="false" onAction="#AppointmentHistoryButtonOnAction" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="Appointment History">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button layoutX="157.0" layoutY="407.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="My Appointments">
+      <Button fx:id="DoctorsButton" layoutX="157.0" layoutY="407.0" mnemonicParsing="false" onAction="#doctorsButtonOnAction" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="View Doctors">
          <font>
             <Font size="24.0" />
          </font>

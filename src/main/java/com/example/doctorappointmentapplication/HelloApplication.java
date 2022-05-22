@@ -1,5 +1,6 @@
 package com.example.doctorappointmentapplication;
 
+import com.example.doctorappointmentapplication.services.AppointmentService;
 import com.example.doctorappointmentapplication.services.DoctorFacilitiesService;
 import com.example.doctorappointmentapplication.services.ProfileService;
 import com.example.doctorappointmentapplication.services.UserService;
@@ -16,6 +17,7 @@ public class HelloApplication extends Application
         UserService.initDatabase();
         DoctorFacilitiesService.initDatabase();
         ProfileService.initDatabase();
+        AppointmentService.initDatabase();
 
         Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
         Scene scene = new Scene(root, 1200, 800);

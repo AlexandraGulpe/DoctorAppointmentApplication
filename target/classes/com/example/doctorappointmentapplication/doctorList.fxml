@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.doctorappointmentapplication.Controllers.DoctorListController">
+
+    <ListView fx:id="listView" layoutY="30" onMouseClicked="#listViewSelectedItem" prefHeight="100" prefWidth="600" />
+    <Button fx:id="DoctorProfilePageButton" layoutX="14.0" layoutY="462.0" mnemonicParsing="false" onAction="#DoctorProfilePageButtonOnAction" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="View Doc Profile">
+    <font>
+        <Font size="24.0" />
+    </font>
+    </Button>
+
+    <Button fx:id="ScheduleAppointmentButton" layoutX="359.0" layoutY="462.0" mnemonicParsing="false" onAction="#ScheduleAppointmentButtonOnAction" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="Schedule Appointment">
+        <font>
+            <Font size="24.0" />
+        </font>
+    </Button>
+
+
+</AnchorPane>

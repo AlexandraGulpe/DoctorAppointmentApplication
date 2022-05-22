@@ -8,6 +8,8 @@ import com.example.doctorappointmentapplication.exceptions.UsernameAlreadyExists
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import static com.example.doctorappointmentapplication.services.FileSystemService.getPathToFile;
@@ -92,5 +94,45 @@ public class UserService {
         return md;
     }
 
+    public static List<String> getDoctorList(){
+
+        List <String> doctorList=new ArrayList<>();
+
+        for(User user:userRepository.find()){
+            if(Objects.equals(user.getRole(),"Doctor")){
+                doctorList.add(user.getUsername() + " " + user.getFullName() +" "+ user.getSpeciality());
+
+
+            }
+
+
+        }
+        return doctorList;
+    }
+
+
+    public static String findUsername(String u) {
+        for(User user: userRepository.find() ){
+            if(Objects.equals(u,user.getUsername() + " " + user.getFullName() +" "+ user.getSpeciality())){
+                return user.getUsername();
+
+            }
+
+
+        }
+     return null;
+    }
+
+    public static String findFullName(String u) {
+        for(User user: userRepository.find() ){
+            if(Objects.equals(u,user.getUsername() + " " + user.getFullName() +" "+ user.getSpeciality())){
+                return user.getFullName();
+
+            }
+
+
+        }
+        return null;
+    }
 
 }
