@@ -146,6 +146,23 @@ public class DoctorProfilePageController {
         }
     }
 
+    public void handleChangeEducationAction() {
+        try {
+            ProfileService.changeEducation(username, editEducation.getText());
+            addMessage.setText("Education Changed Successfully");
+        } catch (ProfileAlreadyExistsException e) {
+            addMessage.setText(e.getMessage());
+        }
+    }
+
+    public void handleChangeWorkAction() {
+        try {
+            ProfileService.changeWork(username, editWork.getText());
+            addMessage.setText("Work Changed Successfully");
+        } catch (ProfileAlreadyExistsException e) {
+            addMessage.setText(e.getMessage());
+        }
+    }
 
 
 

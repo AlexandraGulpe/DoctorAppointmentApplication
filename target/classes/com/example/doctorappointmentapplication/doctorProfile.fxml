@@ -100,7 +100,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Text fx:id="addDeleteMessage" layoutX="401.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="195.83197021484375">
+      <Text fx:id="addDeleteMessage" layoutX="719.0" layoutY="722.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="195.83197021484375">
          <font>
             <Font size="18.0" />
          </font>
@@ -143,7 +143,7 @@
       <Button fx:id="editPhoneButton" layoutX="499.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleChangePhoneAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Phone" />
       <Button fx:id="editMailButton" layoutX="502.0" layoutY="568.0" mnemonicParsing="false" onAction="#handleChangeEmailAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Email" />
       <Button fx:id="editLanguageButton" layoutX="486.0" layoutY="619.0" mnemonicParsing="false" onAction="#handleChangeLanguageAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Languages" />
-      <Button fx:id="editEducationButton" layoutX="489.0" layoutY="667.0" mnemonicParsing="false" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Education" />
-      <Button fx:id="editworkButton" layoutX="499.0" layoutY="719.0" mnemonicParsing="false" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Work" />
+      <Button fx:id="editEducationButton" layoutX="489.0" layoutY="667.0" mnemonicParsing="false" onAction="#handleChangeEducationAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Education" />
+      <Button fx:id="editworkButton" layoutX="499.0" layoutY="719.0" mnemonicParsing="false" onAction="#handleChangeWorkAction" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Edit Work" />
    </children>
 </AnchorPane>

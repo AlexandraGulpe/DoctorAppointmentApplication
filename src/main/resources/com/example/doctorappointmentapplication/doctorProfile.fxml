@@ -100,7 +100,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Text fx:id="addDeleteMessage" layoutX="719.0" layoutY="722.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="195.83197021484375">
+      <Text fx:id="addDeleteMessage" layoutX="953.0" layoutY="662.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="195.83197021484375">
          <font>
             <Font size="18.0" />
          </font>

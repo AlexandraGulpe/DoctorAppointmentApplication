@@ -122,4 +122,30 @@ public class ProfileService {
         if (ok == 0)
             throw new ProfileAlreadyExistsException(language);
     }
+
+    public static void changeEducation(String username, String education) throws ProfileAlreadyExistsException {
+        int ok = 0;
+        for (DoctorProfile profile : profileRepository.find()) {
+            if (Objects.equals(username,profile.getUsername()) ) {
+                profile.setEducation(education);
+                profileRepository.update(profile);
+                ok = 1;
+            }
+        }
+        if (ok == 0)
+            throw new ProfileAlreadyExistsException(education);
+    }
+
+    public static void changeWork(String username, String work) throws ProfileAlreadyExistsException {
+        int ok = 0;
+        for (DoctorProfile profile : profileRepository.find()) {
+            if (Objects.equals(username,profile.getUsername()) ) {
+                profile.setWork(work);
+                profileRepository.update(profile);
+                ok = 1;
+            }
+        }
+        if (ok == 0)
+            throw new ProfileAlreadyExistsException(work);
+    }
 }
