@@ -5,6 +5,7 @@ import com.example.doctorappointmentapplication.services.AppointmentService;
 import com.example.doctorappointmentapplication.services.UserService;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 import java.util.List;
@@ -19,6 +20,10 @@ public class DoctorAppointmentsPageController {
 
     @FXML
     private Text addMessage;
+
+    @FXML
+    private TextField doctorComment;
+
 
     private int currentID;
 
@@ -40,7 +45,7 @@ public class DoctorAppointmentsPageController {
 
     public void handleClickAcceptAction() {
         try {
-            AppointmentService.setAppointmentStatus(currentID,"Accepted");
+            AppointmentService.setAppointmentStatus(currentID,"Accepted","Observation: " + doctorComment.getText());
             listView.getItems().remove(currentSelectedItem);
             addMessage.setText("Accepted appointment successfully");
         } catch (Exception e) {
@@ -51,8 +56,9 @@ public class DoctorAppointmentsPageController {
     public void handleClickDenyAction(){
         try{
 
-            AppointmentService.setAppointmentStatus(currentID,"Denied");
+            AppointmentService.setAppointmentStatus(currentID,"Denied","Reason" + doctorComment.getText());
             listView.getItems().remove(currentSelectedItem);
+            addMessage.setText("Removed appointment successfully");
 
         }catch (Exception e){
             addMessage.setText(e.getMessage());
