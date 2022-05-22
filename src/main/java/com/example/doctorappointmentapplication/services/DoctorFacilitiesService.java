@@ -49,7 +49,7 @@ public class DoctorFacilitiesService {
         List<String> list = new ArrayList<String>();
         for (DoctorServices service : serviceRepository.find()){
             if(Objects.equals(username, service.getUsername())){
-                list.add(service.getService() + " " + service.getDescription() + " " + service.getPrice());
+                list.add("Service: " + service.getService() + "\nDescription: " + service.getDescription() + "\nPrice: " + service.getPrice());
             }
 
         }
@@ -67,13 +67,39 @@ public class DoctorFacilitiesService {
         String str =  "";
         for (DoctorServices service : serviceRepository.find()){
             if(Objects.equals(serviceName, service.getService()) && Objects.equals(username, service.getUsername())){
-                str = service.getService() + " " + service.getDescription() + " " + service.getPrice();
+                str = "Service: " + service.getService() + "\nDescription: " + service.getDescription() + "\nPrice: " + service.getPrice();
                 serviceRepository.remove(service);
             }
         }
         if(str == "") throw new ServiceDoesNotExistException(serviceName);
         return str;
 
+    }
+
+    public static void changeDescription(String name, String username, String description) throws ServiceDoesNotExistException {
+        int ok = 0;
+        for (DoctorServices service : serviceRepository.find()) {
+            if (Objects.equals(username,service.getUsername()) && Objects.equals(name, service.getService())) {
+                service.setDescription(description);
+                serviceRepository.update(service);
+                ok = 1;
+            }
+        }
+        if (ok == 0)
+            throw new ServiceDoesNotExistException(name);
+    }
+
+    public static void changePrice(String name, String username, String price) throws ServiceDoesNotExistException {
+        int ok = 0;
+        for (DoctorServices service : serviceRepository.find()) {
+            if (Objects.equals(username,service.getUsername()) && Objects.equals(name, service.getService())) {
+                service.setDescription(price);
+                serviceRepository.update(service);
+                ok = 1;
+            }
+        }
+        if (ok == 0)
+            throw new ServiceDoesNotExistException(name);
     }
 
     public static List<String> getAllServices(String username){
