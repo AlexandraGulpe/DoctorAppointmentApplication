@@ -2,6 +2,7 @@ package com.example.doctorappointmentapplication.Controllers;
 
 import com.example.doctorappointmentapplication.HelloApplication;
 
+import com.example.doctorappointmentapplication.services.AppointmentService;
 import com.example.doctorappointmentapplication.services.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,7 +47,7 @@ public class PatientPageController {
             root = (Parent)loader.load();
             AppointmentHistoryController appointmentHistoryController = loader.getController();
             appointmentHistoryController.setUsername(username);
-            // appointmentHistoryController.setListView(UserService.getAppointmentList);
+            appointmentHistoryController.setListView(AppointmentService.getPatientAppointmentList(username));
             Stage stage = new Stage();
             stage.setTitle("Appointment History");
             stage.setScene(new Scene(root, 1200, 800));
