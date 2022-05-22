@@ -1,6 +1,7 @@
 package com.example.doctorappointmentapplication.services;
 
 import com.example.doctorappointmentapplication.HelloApplication;
+import com.example.doctorappointmentapplication.exceptions.EmailDoesNotExistException;
 import com.example.doctorappointmentapplication.exceptions.ProfileAlreadyExistsException;
 import com.example.doctorappointmentapplication.exceptions.ProfileDoesNotExistException;
 import com.example.doctorappointmentapplication.exceptions.ServiceDoesNotExistException;
@@ -94,6 +95,19 @@ public class ProfileService {
         }
         if (ok == 0)
             throw new ProfileDoesNotExistException(phone);
+    }
+
+    public static void changeMail(String username, String email) throws EmailDoesNotExistException {
+        int ok = 0;
+        for (DoctorProfile profile : profileRepository.find()) {
+            if (Objects.equals(username,profile.getUsername()) ) {
+                profile.setEmail(email);
+                profileRepository.update(profile);
+                ok = 1;
+            }
+        }
+        if (ok == 0)
+            throw new EmailDoesNotExistException(email);
     }
 
 }

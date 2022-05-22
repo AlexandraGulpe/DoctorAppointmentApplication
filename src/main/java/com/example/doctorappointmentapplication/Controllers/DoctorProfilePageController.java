@@ -1,10 +1,7 @@
 package com.example.doctorappointmentapplication.Controllers;
 
 import com.example.doctorappointmentapplication.HelloApplication;
-import com.example.doctorappointmentapplication.exceptions.ProfileAlreadyExistsException;
-import com.example.doctorappointmentapplication.exceptions.ProfileDoesNotExistException;
-import com.example.doctorappointmentapplication.exceptions.ServiceAlreadyExistsException;
-import com.example.doctorappointmentapplication.exceptions.ServiceDoesNotExistException;
+import com.example.doctorappointmentapplication.exceptions.*;
 import com.example.doctorappointmentapplication.services.DoctorFacilitiesService;
 import com.example.doctorappointmentapplication.services.ProfileService;
 import javafx.event.ActionEvent;
@@ -130,6 +127,17 @@ public class DoctorProfilePageController {
             addMessage.setText(e.getMessage());
         }
     }
+
+    public void handleChangeEmailAction() {
+        try {
+            ProfileService.changeMail(username, editEmail.getText());
+            addMessage.setText("Email Address Changed Successfully");
+        } catch (EmailDoesNotExistException e) {
+            addMessage.setText(e.getMessage());
+        }
+    }
+
+
 
 
 
