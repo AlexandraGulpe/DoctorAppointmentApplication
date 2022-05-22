@@ -7,7 +7,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import com.example.doctorappointmentapplication.Controllers.DoctorPageController;
 import com.example.doctorappointmentapplication.exceptions.*;
@@ -43,7 +45,10 @@ public class DoctorListController {
     private Button ScheduleAppointment;
 
     @FXML
-    private String currentSelectedItem;
+    private Text errorMessage;
+
+    @FXML
+    private String currentSelectedItem=null;
     private String username1;
     private String doctorName;
 
@@ -54,10 +59,18 @@ public class DoctorListController {
         doctorName = UserService.findFullName(currentSelectedItem);
 
     }
+    public void noDoctorSelectedException () throws NoDoctorSelectedException{
+        if(currentSelectedItem==null)
+            throw new NoDoctorSelectedException();
 
-   public void DoctorProfilePageButtonOnAction() throws Exception{
+
+    }
+
+
+    public void DoctorProfilePageButtonOnAction() throws Exception{
         Parent root;
         try {
+            noDoctorSelectedException();
             //root = FXMLLoader.load(adrr);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/viewDoctorProfilePage.fxml"));
             root = (Parent)loader.load();
@@ -71,6 +84,8 @@ public class DoctorListController {
 
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (NoDoctorSelectedException e){
+            errorMessage.setText(e.getMessage());
         }
 
     }
@@ -80,7 +95,7 @@ public class DoctorListController {
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/scheduleAppointment.fxml"));
             root = (Parent)loader.load();
-           ScheduleAppointmentController scheduleAppointmentController = loader.getController();
+            ScheduleAppointmentController scheduleAppointmentController = loader.getController();
             scheduleAppointmentController.setUsername(username,username1,doctorName);
             Stage stage = new Stage();
             stage.setTitle("Schedule Appointment for doctor: "+ doctorName);
@@ -91,5 +106,5 @@ public class DoctorListController {
             e.printStackTrace();
         }
 
-        }
+    }
 }
