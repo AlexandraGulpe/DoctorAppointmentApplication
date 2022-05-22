@@ -1,5 +1,6 @@
 package com.example.doctorappointmentapplication.model;
 
+import javafx.scene.control.TextField;
 import org.dizitart.no2.objects.Id;
 
 public class Appointment {
@@ -13,6 +14,8 @@ public class Appointment {
     private String year;
     private String hour;
     private String appointmentStatus;
+    private String message;
+
 
 
     public Appointment(int id,String patientUsername,String doctorUsername,String doctorName,String day,String month,String year,String hour){
@@ -25,6 +28,8 @@ public class Appointment {
         this.year=year;
         this.hour=hour;
         this.appointmentStatus="Pending";
+        this.message= "No observation yet";
+
 
     }
     public Appointment(){}
@@ -54,5 +59,10 @@ public class Appointment {
     public void setAppointmentStatus(String s){
         this.appointmentStatus=s;
     }
-
+    public void setMessage(String s){
+        this.message=s;
+    }
+    public String getMessage(){
+        return message;
+    }
 }

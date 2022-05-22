@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.doctorappointmentapplication.Controllers.ScheduleAppointmentController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.doctorappointmentapplication.Controllers.ScheduleAppointmentController">
     <left>
         <AnchorPane prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #D6E6ED;" BorderPane.alignment="CENTER">
             <children>
@@ -18,40 +23,40 @@
         </AnchorPane>
     </left>
     <right>
-        <AnchorPane prefHeight="200.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="800.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
             <children>
-                <Label alignment="TOP_CENTER" layoutX="286.0" layoutY="72.0" text="Schedule Appointment">
+                <Label alignment="TOP_CENTER" layoutX="179.0" layoutY="76.0" text="Schedule Appointment">
                     <font>
                         <Font size="30.0" />
                     </font>
                 </Label>
 
-                <Label layoutX="86.0" layoutY="200.0" text="Please enter day do appointment" textAlignment="CENTER">
+                <Label layoutX="14.0" layoutY="222.0" text="Please enter day do appointment" textAlignment="CENTER">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="89.0" layoutY="300.0" text="Please enter a month" textAlignment="CENTER">
+                <Label layoutX="53.0" layoutY="306.0" text="Please enter a month" textAlignment="CENTER">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="130.0" layoutY="400.0" text="Please insert year" textAlignment="CENTER">
+                <Label layoutX="65.0" layoutY="406.0" prefHeight="20.0" prefWidth="121.0" text="Please insert year" textAlignment="CENTER">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="189.0" layoutY="500.0" text="Please enter desired hour(from 10 to 16)" textAlignment="CENTER">
+                <Label layoutX="32.0" layoutY="506.0" text="Please enter desired hour" textAlignment="CENTER">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <TextField fx:id="dayField" layoutX="241.0" layoutY="200.0" prefHeight="32.0" prefWidth="323.0" />
+                <TextField fx:id="dayField" layoutX="247.0" layoutY="216.0" prefHeight="32.0" prefWidth="323.0" />
                 <TextField fx:id="monthField" layoutX="241.0" layoutY="300.0" prefHeight="32.0" prefWidth="323.0" />
                 <TextField fx:id="yearField" layoutX="241.0" layoutY="400.0" prefHeight="32.0" prefWidth="323.0" />
                 <TextField fx:id="hourField" layoutX="241.0" layoutY="500.0" prefHeight="32.0" prefWidth="323.0" />
 
-                <Button fx:id="scheduleButton" layoutX="359.0" layoutY="462.0" mnemonicParsing="false" onAction="#handleScheduleOnAction" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="Schedule">
+                <Button fx:id="scheduleButton" layoutX="368.0" layoutY="641.0" mnemonicParsing="false" onAction="#handleScheduleOnAction" prefHeight="88.0" prefWidth="188.0" style="-fx-background-color: #C1E4F0;" text="Schedule">
                     <font>
                         <Font size="24.0" />
                     </font>
@@ -60,6 +65,11 @@
                     <font>
                         <Font size="18.0" />
                     </font></Text>
+            <Label layoutX="74.0" layoutY="532.0" text="(from 10 to 16)">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
 
             </children>
         </AnchorPane>

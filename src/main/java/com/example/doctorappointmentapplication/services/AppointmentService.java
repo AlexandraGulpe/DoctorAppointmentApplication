@@ -1,7 +1,6 @@
 package com.example.doctorappointmentapplication.services;
-import com.example.doctorappointmentapplication.model.User;
-import com.example.doctorappointmentapplication.services.UserService;
 
+import javafx.scene.control.TextField;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import  com.example.doctorappointmentapplication.model.Appointment;
@@ -39,7 +38,8 @@ public class AppointmentService {
             if(Objects.equals(appointment.getPatientUsername(),username)){
 
                 appointmentList.add("Doctor: " + appointment.getDoctorName()+ " \nOn date:" + appointment.getDay() +" \\"+
-                        appointment.getMonth() + " \\" + appointment.getYear() + "\nAt:" + appointment.getHour() + "\nStatus: " + appointment.getAppointmentStatus());
+                        appointment.getMonth() + " \\" + appointment.getYear() + "\nAt:" + appointment.getHour() +
+                        "\nStatus: " + appointment.getAppointmentStatus() + "Message:" + appointment.getMessage());
 
             }
 
@@ -59,7 +59,7 @@ public class AppointmentService {
             if(Objects.equals(appointment.getDoctorName(),username) && Objects.equals(appointment.getAppointmentStatus(),"Pending")){
 
                 appointmentList.add("AppointmentID: " + appointment.getId() + "\n Doctor: " + appointment.getDoctorName()+ "\n On date: " + appointment.getDay() +" \\"+
-                        appointment.getMonth() + " \\" + appointment.getYear() + "\n At: " + appointment.getHour()  );
+                        appointment.getMonth() + " \\" + appointment.getYear() + "\n At: " + appointment.getHour());
 
             }
 
@@ -80,10 +80,11 @@ public class AppointmentService {
         return -1;
         }
 
-    public static void setAppointmentStatus(int id,String status){
+    public static void setAppointmentStatus(int id, String status, String message){
         for(Appointment appointment : AppointmentRepository.find()){
             if(Objects.equals(id,appointment.getId())){
                 appointment.setAppointmentStatus(status);
+                appointment.setMessage(message);
                 AppointmentRepository.update(appointment);
             }
         }
