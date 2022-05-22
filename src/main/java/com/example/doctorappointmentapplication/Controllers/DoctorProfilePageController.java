@@ -60,6 +60,22 @@ public class DoctorProfilePageController {
     @FXML
     private Text addDeleteMessage;
 
+    @FXML
+    private TextField editPhone;
+
+    @FXML
+    private TextField editEmail;
+
+    @FXML
+    private TextField editLanguage;
+
+    @FXML
+    private TextField editEducation;
+
+    @FXML
+    private TextField editWork;
+
+
 
     private String username;
 
@@ -96,12 +112,13 @@ public class DoctorProfilePageController {
     }
 
     public void backButtonOnAction(ActionEvent event) throws  Exception{
-        URL adrr = HelloApplication.class.getResource("doctorPage.fxml");
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/doctorPage.fxml"));
+        Parent root = loader.load();
+        DoctorPageController doctorPageController = loader.getController();
+        doctorPageController.setUsername(username);
 
-
-        Parent root = FXMLLoader.load(adrr);
-        Stage window = (Stage) backButton.getScene().getWindow();
-        window.setScene(new Scene(root, 1200, 800));
+        Stage window =(Stage) backButton.getScene().getWindow();
+        window.setScene(new Scene(root,1200,800));
 
     }
 
