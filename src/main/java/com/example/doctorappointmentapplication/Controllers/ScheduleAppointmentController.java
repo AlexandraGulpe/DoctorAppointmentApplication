@@ -19,12 +19,14 @@ import java.io.IOException;
 public class ScheduleAppointmentController {
 
     private String patientUsername;
+    private String doctorUsername;
 
     private String doctorName;
 
-    public void setUsername(String patientUsername, String doctorName){
+    public void setUsername(String patientUsername,String doctorUsername ,String doctorName){
 
         this.patientUsername = patientUsername;
+        this.doctorUsername=doctorUsername;
         this.doctorName = doctorName;
 
     }
@@ -50,7 +52,7 @@ public class ScheduleAppointmentController {
     @FXML
     public void handleScheduleOnAction() {
         try {
-           AppointmentService.scheduleAppointment(patientUsername,doctorName,dayField.getText(),monthField.getText(),yearField.getText(),hourField.getText());
+           AppointmentService.scheduleAppointment(AppointmentService.getLastId()+1, patientUsername,doctorUsername,doctorName,dayField.getText(),monthField.getText(),yearField.getText(),hourField.getText());
             scheduledMessage.setText("Appointment request created successfully!");
 
         } catch (Exception e) {

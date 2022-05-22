@@ -1,7 +1,12 @@
 package com.example.doctorappointmentapplication.model;
 
+import org.dizitart.no2.objects.Id;
+
 public class Appointment {
+    @Id
+    private int id;
     private String patientUsername;
+    private String doctorUsername;
     private String doctorName;
     private String day;
     private String month;
@@ -10,9 +15,10 @@ public class Appointment {
     private String appointmentStatus; //
 
 
-    public Appointment(String patientUsername,String doctorName,String day,String month,String year,String hour){
-
+    public Appointment(int id,String patientUsername,String doctorUsername,String doctorName,String day,String month,String year,String hour){
+        this.id=id;
         this.patientUsername=patientUsername;
+        this.doctorUsername=doctorUsername;
         this.doctorName=doctorName;
         this.day=day;
         this.month=month;
@@ -21,6 +27,7 @@ public class Appointment {
 
     }
     public Appointment(){}
+    public  int getId(){return id ;}
     public String getPatientUsername(){
         return patientUsername;
     }

@@ -13,7 +13,7 @@
          <font>
             <Font size="30.0" />
          </font></Label>
-      <Button layoutX="82.0" layoutY="281.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="My Appointments">
+      <Button fx:id="myAppointmentsButton" layoutX="82.0" layoutY="281.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="233.0" style="-fx-background-color: #C1E4F0;" text="My Pending Appointments" onAction="#myAppointmentsButtonOnAction" >
          <font>
             <Font size="24.0" />
          </font>

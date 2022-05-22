@@ -43,7 +43,7 @@ public class DoctorListController {
     private Button ScheduleAppointment;
 
     @FXML
-    public String currentSelectedItem;
+    private String currentSelectedItem;
     private String username1;
     private String doctorName;
 
@@ -81,7 +81,7 @@ public class DoctorListController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/scheduleAppointment.fxml"));
             root = (Parent)loader.load();
            ScheduleAppointmentController scheduleAppointmentController = loader.getController();
-            scheduleAppointmentController.setUsername(username,doctorName);
+            scheduleAppointmentController.setUsername(username,username1,doctorName);
             Stage stage = new Stage();
             stage.setTitle("Schedule Appointment for doctor: "+ doctorName);
             stage.setScene(new Scene(root, 1200, 800));

@@ -19,8 +19,15 @@ public class AppointmentService {
                 .openOrCreate("DoctorAppointments", "DoctorAppointments");
         AppointmentRepository = database.getRepository(Appointment.class);
     }
-    public static void scheduleAppointment(String patientUsername,String doctorName,String day,String month,String year,String hour){
-        AppointmentRepository.insert(new Appointment(patientUsername,doctorName,day,month,year,hour));
+    public static int getLastId(){
+        int id=0;
+    for(Appointment appointment : AppointmentRepository.find()){
+        id= Math.max(id, appointment.getId());
+    }
+    return id;
+    }
+    public static void scheduleAppointment(int id,String patientUsername,String doctorUsername,String doctorName,String day,String month,String year,String hour){
+        AppointmentRepository.insert(new Appointment(id,patientUsername,doctorUsername,doctorName,day,month,year,hour));
     }
 
 
@@ -43,6 +50,51 @@ public class AppointmentService {
 
 
     }
+
+    public static List<String> getDoctorPendingAppointmentList(String username){
+
+        List <String> appointmentList =new ArrayList<>();
+
+        for(Appointment appointment:AppointmentRepository.find()){
+            if(Objects.equals(appointment.getDoctorName(),username) && Objects.equals(appointment.getAppointmentStatus(),"Pending")){
+
+                appointmentList.add("AppointmentID:" + appointment.getId() + " Doctor: " + appointment.getDoctorName()+ " On date:" + appointment.getDay() +" \\"+
+                        appointment.getMonth() + " \\" + appointment.getYear() + " At:" + appointment.getHour()  );
+
+            }
+
+
+        }
+        return appointmentList;
+
+
+
+    }
+
+
+
+   /* public static List<String> getDoctorApprovedAppointmentList(String name){
+
+        List <String> appointmentList =new ArrayList<>();
+
+        for(Appointment appointment:AppointmentRepository.find()){
+            if(Objects.equals("AppointmentID:" + appointment.getId() + appointment.getDoctorName(),name) && Objects.equals(appointment.getAppointmentStatus(),"Approved")){
+
+                appointmentList.add("Doctor: " + appointment.getDoctorName()+ " On date:" + appointment.getDay() +" \\"+
+                        appointment.getMonth() + " \\" + appointment.getYear() + "At:" + appointment.getHour()  );
+
+            }
+
+
+        }
+        return appointmentList;
+
+
+
+    }*/
+
+
+
 
 
 
