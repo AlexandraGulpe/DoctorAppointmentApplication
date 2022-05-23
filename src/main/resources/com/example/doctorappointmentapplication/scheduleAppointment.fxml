@@ -16,7 +16,7 @@
             <children>
                 <ImageView fitHeight="496.0" fitWidth="482.0" layoutX="51.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@doctor.png" />
+                        <Image url="@DoctorConsultation.png" />
                     </image>
                 </ImageView>
             </children>

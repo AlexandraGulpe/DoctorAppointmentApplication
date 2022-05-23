@@ -40,5 +40,10 @@
             <Font size="18.0" />
         </font>
     </Label>
+   <Button fx:id="backButton" layoutX="933.0" layoutY="592.0" mnemonicParsing="false" style="-fx-background-color: #C1E4F0 #C1E4F0 #C1E4F0 #C1E4F0;" text="Back" onAction="#backButtonOnAction">
+      <font>
+         <Font size="24.0" />
+      </font>
+   </Button>
 
 </AnchorPane>
