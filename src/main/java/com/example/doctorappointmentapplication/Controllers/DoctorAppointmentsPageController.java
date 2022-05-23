@@ -73,6 +73,8 @@ public class DoctorAppointmentsPageController {
             listView.getItems().remove(currentSelectedItem);
             addMessage.setText("Accepted appointment successfully");
 
+            currentSelectedItem=null;
+
         }catch (NoAppointmentSelectedException e){
             errorMessage.setText(e.getMessage());
 
@@ -90,6 +92,8 @@ public class DoctorAppointmentsPageController {
             AppointmentService.setAppointmentStatus(currentID,"Denied","Reason: " + doctorComment.getText());
             listView.getItems().remove(currentSelectedItem);
             addMessage.setText("Removed appointment successfully");
+
+            currentSelectedItem=null;
 
         }catch (NoAppointmentSelectedException e){
             errorMessage.setText(e.getMessage());

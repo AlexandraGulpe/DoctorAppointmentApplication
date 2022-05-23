@@ -93,6 +93,7 @@ public class DoctorListController {
     public void ScheduleAppointmentButtonOnAction() throws Exception{
         Parent root;
         try{
+            noDoctorSelectedException();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/doctorappointmentapplication/scheduleAppointment.fxml"));
             root = (Parent)loader.load();
             ScheduleAppointmentController scheduleAppointmentController = loader.getController();
@@ -104,6 +105,9 @@ public class DoctorListController {
 
         } catch (IOException e) {
             e.printStackTrace();
+
+        }catch (NoDoctorSelectedException e){
+            errorMessage.setText(e.getMessage());
         }
 
     }
